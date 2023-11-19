@@ -128,6 +128,7 @@ int main(int argc, char *argv[]){
             timeInc++;
         }
     }
+    fclose(fp);
     free(readBuffer);
     free(timeFormat);
     free(smsHeapSize);
@@ -148,7 +149,7 @@ int main(int argc, char *argv[]){
     int consecTest = 1;
     int misplelledTotal = 0;
     int probTotal = 0;
-    char *indivSMS;
+    char *indivSMS = NULL;
     int mispelledResult = 0;
     int probResult = 0;
     int indivSMSPosition = 0;
@@ -162,9 +163,9 @@ int main(int argc, char *argv[]){
     // The comparision
     printf("Start Compare\n");
     for (int i = 0; i < smsSize; i++){
-        printf("Time: %d\n", time[i]);
+       // printf("Time: %d\n", time[i]);
         if (time[i] > 699 || time[i] <= 100){
-            printf("Message %d: %s", i + 1, sms[i]);
+            printf("Message #%d: %s\n", i + 1, sms[i]);
         } else{
             // Assign token from smsLower[i]
             indivSMS = strtok(smsLower[i], " ");
@@ -223,12 +224,7 @@ int main(int argc, char *argv[]){
                 lovePos = 0;
                 youPos = 0; 
             } else{
-                printf("Message %d: %s", i + 1, sms[i]);
-            }
-             if (isConsec == true || isProb == true){
-                printf("Message #%d: FAILED TO SEND.\n", i + 1);
-                isConsec = false;
-                isProb = false;
+                printf("Message #%d: %s\n", i + 1, sms[i]);
             }
         }
     }
@@ -248,5 +244,6 @@ int main(int argc, char *argv[]){
     }
     free(probWords);
     free(time);
+    free(indivSMS);
     return 0;
 }
