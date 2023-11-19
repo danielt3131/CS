@@ -5,7 +5,16 @@
 #include <stdbool.h>
 
 
-
+/* int stringLength(char **string, int element){
+    int stringLen = 0;
+    int i = 0;
+    while (string[element][i] != '\0'){
+        stringLen++;
+        i++;
+    }
+    return stringLen;
+}
+ */
 void stringLower(int collumSize, char **string){
     for (int i = 0; i < collumSize; i++){
         for (int j = 0; j <= strlen(string[i]); j++){
@@ -109,7 +118,7 @@ int main(int argc, char *argv[]){
     int consecTest = 1;
     int misplelledTotal = 0;
     int probTotal = 0;
-    int *probSms = (int *) malloc (smsSize * sizeof(int));
+    //int *probSms = (int *) malloc (smsSize * sizeof(int));
     char *indivSMS;
     int mispelledResult = 0;
     int probResult = 0;
@@ -176,6 +185,8 @@ int main(int argc, char *argv[]){
                         }
                     } 
                 }
+            } else {
+                printf("Message %d: %s\n", i + 1, sms[i]);
             }
         }
     }
