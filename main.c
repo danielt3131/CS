@@ -170,11 +170,12 @@ int main(int argc, char *argv[]){
         if (time[i] > 699 || time[i] <= 100){
             printf("Message %d: %s", i + 1, sms[i]);
         } else{
-            misplelledTotal = 0;
             // Assign token from smsLower[i]
             indivSMS = strtok(smsLower[i], " ");
             // Loop until all words in string are compared
             while (indivSMS != NULL){
+                misplelledTotal = 0;
+                probTotal = 0;
                 for (int j = 0; j < dictSize; j++){
                     mispelledResult = strcmp(indivSMS, dictionary[j]);
                     if (mispelledResult > 0 || mispelledResult < 0){
@@ -186,14 +187,14 @@ int main(int argc, char *argv[]){
                     probResult = strcmp(indivSMS, probWords[k]);
                     if (probResult > 0 || probResult < 0){
                         probResult = 1;
-                        probTotal += probResult;
+                        probTotal += probTotal;
                     }
                 }
                 if (misplelledTotal == dictSize){
                     numMispelled++;
                     misplelledTotal = 0;
                 }
-                if (numMispelled >= 3 || probTotal < probWordSize){
+                if (numMispelled >= 3 || (probTotal >= probWordSize)){
                     isProb = true;
                     //printf("Message #%d: FAILED TO SEND.\n", i + 1);
                     numMispelled = 0;
@@ -220,15 +221,15 @@ int main(int argc, char *argv[]){
                 indivSMS = strtok(NULL, " ");
                 indivSMSPosition++;
             }
-                if(isProb == true || ((iPos + 1 == lovePos) && (lovePos + 1 == youPos))){
-                    printf("Message #%d: FAILED TO SEND.\n", i + 1);
-                    isProb = false;
-                    iPos = 0;
-                    lovePos = 0;
-                    youPos = 0; 
-                } else{
-                    printf("Message %d: %s", i + 1, sms[i]);
-                }
+            if(isProb == true || ((iPos + 1 == lovePos) && (lovePos + 1 == youPos))){
+                printf("Message #%d: FAILED TO SEND.\n", i + 1);
+                isProb = false;
+                iPos = 0;
+                lovePos = 0;
+                youPos = 0; 
+            } else{
+                printf("Message %d: %s", i + 1, sms[i]);
+            }
                 /* if (consecTest == 0){
                 // Reset indivSMS
                 indivSMS = strtok(smsLower[i], " ");
