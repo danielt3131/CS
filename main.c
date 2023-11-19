@@ -17,8 +17,10 @@
  */
 void stringLower(int collumSize, char **string){
     for (int i = 0; i < collumSize; i++){
+        printf("Current String %s\n", string[i]);
         for (int j = 0; j <= strlen(string[i]); j++){
             string[i][j] = tolower(string[i][j]);
+            printf("%c\n", string[i][j]);
         }
     }
 }
@@ -45,8 +47,8 @@ int main(int argc, char *argv[]){
     dictSize = atoi(sizeBuffer);
     char **dictionary = (char **) malloc (dictSize * sizeof(char));
     for (int i = 0; i < dictSize; i++){
-        dictionary[i] = (char *) malloc (30 * sizeof(char));
-        fgets(dictionary[i], 29, fp);
+        dictionary[i] = (char *) calloc (50, sizeof(char));
+        fgets(dictionary[i], 49, fp);
     }
     int probWordSize;
     fgets(sizeBuffer, 49, fp);
@@ -108,6 +110,7 @@ int main(int argc, char *argv[]){
     }
     //char smsLower[50][50];
     printf("Making comparisons case insenstive and removing LF\n");
+    printf("%s\n", dictionary[0]);
     stringLower(dictSize, dictionary);
     stringLower(smsSize, smsLower);
     stringLower(probWordSize, probWords);
