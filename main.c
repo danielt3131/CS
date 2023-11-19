@@ -42,33 +42,41 @@ int main(int argc, char *argv[]){
         return 0;
     }
     char sizeBuffer[50];
+    char *readBuffer = (char *) malloc(150 * sizeof(char));
     int dictSize;
     fgets(sizeBuffer, 49, fp);
     dictSize = atoi(sizeBuffer);
-    char **dictionary = (char **) malloc (dictSize * sizeof(char));
+    char **dictionary = (char **) malloc (dictSize * sizeof(char*));
     for (int i = 0; i < dictSize; i++){
-        dictionary[i] = (char *) calloc (50, sizeof(char));
-        fgets(dictionary[i], 49, fp);
+        fgets(readBuffer, 149, fp);
+      //  printf("%s", readBuffer);
+        dictionary[i] = (char *) malloc ((strlen(readBuffer) + 1) * sizeof(char));
+        strcpy(dictionary[i], readBuffer);
+        //printf("%s", dictionary[i]);
     }
     int probWordSize;
     fgets(sizeBuffer, 49, fp);
     probWordSize = atoi(sizeBuffer);
-    char **probWords = (char **) malloc (probWordSize * sizeof(char));
+    char **probWords = (char **) malloc (probWordSize * sizeof(char*));
     for (int i = 0; i < probWordSize; i++){
-        probWords[i] = (char *) malloc (100 * sizeof(char));
-        fgets(probWords[i], 99, fp);
+        fgets(readBuffer, 149, fp);
+        probWords[i] = (char *) malloc ((strlen(readBuffer) + 1) * sizeof(char));
+        strcpy(probWords[i], readBuffer);
     }
     int smsSize;
     fgets(sizeBuffer, 49, fp);
     smsSize = atoi(sizeBuffer);
-    char **sms = (char **) malloc (smsSize * sizeof(char));
+    char **sms = (char **) malloc (smsSize * sizeof(char*));
+    /*
     for (int i = 0; i < smsSize; i++){
         sms[i] = (char *) malloc (50 * sizeof(char));
     }
+    */
     //char tempBuffer [100];
     //fgets(tempBuffer, 99, fp);
     //printf("%s", tempBuffer);
     //char sms[50][50];
+    printf("%s",dictionary[0]);
     printf("Now reading in SMS and Timestamps\n");
     int timeHr = 0;
     int timeMin = 0;
@@ -81,15 +89,17 @@ int main(int argc, char *argv[]){
     // splitting sms and time into 2 arrays;
     for (int i = 0; i < (smsSize * 2); i++){
         if (i % 2 == 1){
-            printf("Reading in SMS %d\n", smsInc + 1);
-            fgets(sms[smsInc], 50, fp);
+            //printf("Reading in SMS %d\n", smsInc + 1);
+            fgets(readBuffer, 149, fp);
+            sms[smsInc] =  (char *) malloc ((strlen(readBuffer) + 1) * sizeof(char));
+            strcpy(sms[smsInc], readBuffer);
             //fscanf(fp, "%d %79s\n", &tmpFuck, sms[smsInc]);
-            printf("SMS : %s\n", sms[smsInc]);
-            printf("SMS Inc: %d\n", smsInc);
+            //printf("SMS : %s\n", sms[smsInc]);
+            //printf("SMS Inc: %d\n", smsInc);
             smsInc++;
         }   // Convert 12 HR time string to 24 HR int to array
             else {
-            fscanf(fp, "%d:%d %7s\n", &timeHr, &timeMin, timeFormat);
+            fscanf(fp, "%d:%d %7s", &timeHr, &timeMin, timeFormat);
             //printf("Time 1: %d %d %s\n", timeHr , timeMin, timeFormat);
             timeHr = timeHr * 100;
             //printf("%s\n", timeFormat);
@@ -97,7 +107,7 @@ int main(int argc, char *argv[]){
                 timeHr += 1200;
             }
             time[timeInc] = timeHr + timeMin;
-            printf("Time %d\n", time[timeInc]);
+            //printf("Time %d\n", time[timeInc]);
             timeInc++;
         }
         //printf("%d\n", i);
