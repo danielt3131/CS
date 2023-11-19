@@ -70,31 +70,31 @@ int main(int argc, char *argv[]){
     smsSize = atoi(sizeBuffer);
     char **sms = (char **) malloc (smsSize * sizeof(char*));
     for (int i = 0; i < smsSize; i++){
-        //sms[i] = (char *) malloc (50 * sizeof(char));
+        sms[i] = (char *) malloc (50 * sizeof(char));
     }
     //char tempBuffer [100];
     //fgets(tempBuffer, 99, fp);
     //printf("%s", tempBuffer);
     //char sms[50][50];
-    printf("%s",dictionary[0]);
-    printf("Now reading in SMS and Timestamps\n");
+    //printf("%s",dictionary[0]);
+   // printf("Now reading in SMS and Timestamps\n");
     int timeHr = 0;
     int timeMin = 0;
     int smsInc = 0;
     int timeInc = 0;
     int *time = (int *) malloc ((smsSize) * sizeof(int));
     char timeFormat[8];
-    printf("%d messages to read in\n", smsSize);
+    //printf("%d messages to read in\n", smsSize);
     int tmpFuck = 0;
     // splitting sms and time into 2 arrays;
     for (int i = 0; i < (smsSize * 2); i++){
         if (i % 2 == 1){
-            printf("Reading in SMS %d\n", smsInc + 1);
+            //printf("Reading in SMS %d\n", smsInc + 1);
             //fgets(sms[smsInc], 50, fp);
-            fgets(readBuffer, 149, fp);
-            sms[smsInc] =  (char *) malloc ((strlen(readBuffer) + 1) * sizeof(char));
-            strcpy(sms[smsInc], readBuffer);
-             /* fscanf(fp, "%d", &tmpFuck);
+            //fgets(readBuffer, 149, fp);
+            //sms[smsInc] =  (char *) malloc ((strlen(readBuffer) + 1) * sizeof(char));
+            //strcpy(sms[smsInc], readBuffer);
+            fscanf(fp, "%d", &tmpFuck);
             for(int k = 0; k < tmpFuck; k++){
                 fscanf(fp, "%25s", readBuffer);
                 strcat(readBuffer, " ");
@@ -106,11 +106,11 @@ int main(int argc, char *argv[]){
                     sms[smsInc][u] = '\n';
                     sms[smsInc][u + 1] = '\0';
                     break;
-                    printf("Added NB\n");
+                  //  printf("Added NB\n");
                 }
-            } */
-            printf("SMS : %s\n", sms[smsInc]);
-            printf("SMS Inc: %d\n", smsInc);
+            }
+            //printf("SMS : %s\n", sms[smsInc]);
+           // printf("SMS Inc: %d\n", smsInc);
             smsInc++;
         }   // Convert 12 HR time string to 24 HR int to array
             else {
@@ -122,26 +122,26 @@ int main(int argc, char *argv[]){
                 timeHr += 1200;
             }
             time[timeInc] = timeHr + timeMin;
-            printf("Time %d\n", time[timeInc]);
+            //printf("Time %d\n", time[timeInc]);
             timeInc++;
         }
-        printf("%d\n", i);
+        //printf("%d\n", i);
     }
-    printf("First SMS %s\n", sms[0]);
+    //printf("First SMS %s\n", sms[0]);
     //printf("Second SMS %s\n", sms[1]);
     char **smsLower = (char **) malloc (smsSize * sizeof(char*));
     for (int i = 0; i < smsSize; i++){
         smsLower[i] = (char *) malloc ((strlen(sms[i]) + 1) * sizeof(char));
         strcpy(smsLower[i], sms[i]);
-        printf("%s\n", smsLower[i]);
+        //printf("%s\n", smsLower[i]);
     }
     //char smsLower[50][50];
-    printf("Making comparisons case insenstive and removing LF\n");
-    printf("%s\n", dictionary[0]);
+    //printf("Making comparisons case insenstive and removing LF\n");
+   // printf("%s\n", dictionary[0]);
     stringLower(dictSize, dictionary);
     stringLower(smsSize, smsLower);
     stringLower(probWordSize, probWords);
-    printf("Now removing LF\n");
+    //printf("Now removing LF\n");
     removeLF(dictSize, dictionary);
     removeLF(probWordSize, probWords);
     removeLF(smsSize, smsLower);
@@ -158,15 +158,17 @@ int main(int argc, char *argv[]){
     int consecTestPos = 0;
     bool isConsec = false;
     bool isProb = false;
+    int iPos = 0;
+    int lovePos = 0;
+    int youPos = 0;
     // SMS Loop
 
     // 32 = space 
     printf("Start Compare\n");
     for (int i = 0; i < smsSize; i++){
         printf("Time: %d\n", time[i]);
-        if (time[i] > 699 && time[i] <= 100){
+        if (time[i] > 699 || time[i] <= 100){
             printf("Message %d: %s", i + 1, sms[i]);
-            break;
         } else{
             misplelledTotal = 0;
             // Assign token from smsLower[i]
@@ -191,7 +193,7 @@ int main(int argc, char *argv[]){
                     numMispelled++;
                     misplelledTotal = 0;
                 }
-                if (numMispelled >= 3 || probTotal != probWordSize){
+                if (numMispelled >= 3 || probTotal < probWordSize){
                     isProb = true;
                     //printf("Message #%d: FAILED TO SEND.\n", i + 1);
                     numMispelled = 0;
@@ -200,22 +202,43 @@ int main(int argc, char *argv[]){
                 // Determine if I love you test needs to be done
                 consecTest = strcmp(indivSMS, "i");
                 if (consecTest == 0){
-                    consecTestPos = indivSMSPosition;
+                    iPos = indivSMSPosition;
+                    consecTest = 1;
+                }
+                consecTest = strcmp(indivSMS, "love");
+                if(consecTest == 0){
+                    lovePos = indivSMSPosition;
+                    consecTest = 1;
+                }
+                consecTest = strcmp(indivSMS, "you");
+                if(consecTest == 0){
+                    youPos = indivSMSPosition;
+                    consecTest = 1;
                 }
                 // Get next word in string to compare
-                printf("Token | %s\n", indivSMS);
+                //printf("Token | %s\n", indivSMS);
                 indivSMS = strtok(NULL, " ");
                 indivSMSPosition++;
             }
-            if (consecTest == 0){
+                if(isProb == true || ((iPos + 1 == lovePos) && (lovePos + 1 == youPos))){
+                    printf("Message #%d: FAILED TO SEND.\n", i + 1);
+                    isProb = false;
+                    iPos = 0;
+                    lovePos = 0;
+                    youPos = 0; 
+                } else{
+                    printf("Message %d: %s", i + 1, sms[i]);
+                }
+                /* if (consecTest == 0){
                 // Reset indivSMS
                 indivSMS = strtok(smsLower[i], " ");
                 for (int l = 0; l < consecTestPos; l++){
                     // Set indivSMS to I to start I love you test
                     indivSMS = strtok(NULL, " ");
+                    printf("Current Token | %s", indivSMS);
                 }
                 if (strcmp(indivSMS, "i") == 0){
-                    printf("%s\n", indivSMS);
+                    printf("ILV Test | %s\n", indivSMS);
                     indivSMS = strtok(NULL, " ");
                     printf("Second Test %s\n", indivSMS);
                     if (strcmp(indivSMS, "love") == 0){
@@ -232,8 +255,8 @@ int main(int argc, char *argv[]){
                 } else{
                     consecTest = 1;
                 }
-            }
-            if (isConsec == true || isProb == true){
+             } */
+             if (isConsec == true || isProb == true){
                 printf("Message #%d: FAILED TO SEND.\n", i + 1);
                 isConsec = false;
                 isProb = false;
@@ -250,11 +273,13 @@ int main(int argc, char *argv[]){
     for (int i = 0; i < dictSize; i++){
         free(dictionary[i]);
     }
-    free(probWords);
+    free(dictionary);
     for (int i = 0; i < probWordSize; i++){
         free(probWords[i]);
     }
-    free(dictionary);
+    free(probWords);
+    free(time);
+    free(readBuffer);
     // Determine time ie convert 3:30 PM to 1530
     /*int time[smsSize / 2];
     char tempTime[10];
