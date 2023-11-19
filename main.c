@@ -4,17 +4,6 @@
 #include <ctype.h>
 #include <stdbool.h>
 
-
-/* int stringLength(char **string, int element){
-    int stringLen = 0;
-    int i = 0;
-    while (string[element][i] != '\0'){
-        stringLen++;
-        i++;
-    }
-    return stringLen;
-}
- */
 void stringLower(int collumSize, char **string){
     for (int i = 0; i < collumSize; i++){
         //printf("Current String %s\n", string[i]);
@@ -43,7 +32,7 @@ int main(int argc, char *argv[]){
         printf("Unable to find file\n");
         return 0;
     }
-    char sizeBuffer[50];
+    char *sizeBuffer = (char *) malloc(50 * sizeof(char));
     char *readBuffer = (char *) malloc(150 * sizeof(char));
     int dictSize;
     fgets(sizeBuffer, 49, fp);
@@ -281,6 +270,7 @@ int main(int argc, char *argv[]){
     free(probWords);
     free(time);
     free(readBuffer);
+    free(sizeBuffer);
     // Determine time ie convert 3:30 PM to 1530
     /*int time[smsSize / 2];
     char tempTime[10];
