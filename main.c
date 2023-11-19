@@ -17,10 +17,10 @@
  */
 void stringLower(int collumSize, char **string){
     for (int i = 0; i < collumSize; i++){
-        printf("Current String %s\n", string[i]);
+        //printf("Current String %s\n", string[i]);
         for (int j = 0; j <= strlen(string[i]); j++){
             string[i][j] = tolower(string[i][j]);
-            printf("%c\n", string[i][j]);
+           // printf("%c\n", string[i][j]);
         }
     }
 }
@@ -28,8 +28,10 @@ void stringLower(int collumSize, char **string){
 void removeLF(int collumSize, char **string){
     for (int i = 0; i < collumSize; i++){
         for (int j = 0; j <= strlen(string[i]); j++){
+            printf("%c", string[i][j]);
             if (string[i][j] == '\n'){
                 string[i][j] = '\0';
+                printf("Removed LF\n");
             }
         }
     }
@@ -67,11 +69,9 @@ int main(int argc, char *argv[]){
     fgets(sizeBuffer, 49, fp);
     smsSize = atoi(sizeBuffer);
     char **sms = (char **) malloc (smsSize * sizeof(char*));
-    /*
     for (int i = 0; i < smsSize; i++){
         sms[i] = (char *) malloc (50 * sizeof(char));
     }
-    */
     //char tempBuffer [100];
     //fgets(tempBuffer, 99, fp);
     //printf("%s", tempBuffer);
@@ -91,7 +91,7 @@ int main(int argc, char *argv[]){
         if (i % 2 == 1){
             //printf("Reading in SMS %d\n", smsInc + 1);
             fgets(readBuffer, 149, fp);
-            sms[smsInc] =  (char *) malloc ((strlen(readBuffer) + 1) * sizeof(char));
+            //sms[smsInc] =  (char *) malloc ((strlen(readBuffer) + 1) * sizeof(char));
             strcpy(sms[smsInc], readBuffer);
             //fscanf(fp, "%d %79s\n", &tmpFuck, sms[smsInc]);
             //printf("SMS : %s\n", sms[smsInc]);
@@ -99,7 +99,7 @@ int main(int argc, char *argv[]){
             smsInc++;
         }   // Convert 12 HR time string to 24 HR int to array
             else {
-            fscanf(fp, "%d:%d %7s", &timeHr, &timeMin, timeFormat);
+            fscanf(fp, "%d:%d %3s", &timeHr, &timeMin, timeFormat);
             //printf("Time 1: %d %d %s\n", timeHr , timeMin, timeFormat);
             timeHr = timeHr * 100;
             //printf("%s\n", timeFormat);
@@ -112,11 +112,12 @@ int main(int argc, char *argv[]){
         }
         //printf("%d\n", i);
     }
-    
-    char **smsLower = (char **) malloc (smsSize * sizeof(char));
+    printf("First SMS %s", sms[0]);
+    char **smsLower = (char **) malloc (smsSize * sizeof(char*));
     for (int i = 0; i < smsSize; i++){
         smsLower[i] = (char *) malloc ((strlen(sms[i]) + 1) * sizeof(char));
         strcpy(smsLower[i], sms[i]);
+        printf("%s\n", sms);
     }
     //char smsLower[50][50];
     printf("Making comparisons case insenstive and removing LF\n");
@@ -124,9 +125,11 @@ int main(int argc, char *argv[]){
     stringLower(dictSize, dictionary);
     stringLower(smsSize, smsLower);
     stringLower(probWordSize, probWords);
+    printf("Now removing LF\n");
     removeLF(dictSize, dictionary);
     removeLF(dictSize, probWords);
     removeLF(smsSize, smsLower);
+    printf("Testing\n");
     int numMispelled = 0;
     int consecTest = 1;
     int misplelledTotal = 0;
