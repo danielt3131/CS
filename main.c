@@ -52,25 +52,21 @@ int main(int argc, char *argv[]){
     smsSize = atoi(sizeBuffer);
     char **sms = (char **) malloc (smsSize * sizeof(char));
     for (int i = 0; i < smsSize; i++){
-        sms[i] = (char *) malloc (80 * sizeof(char));
+        sms[i] = (char *) malloc (50 * sizeof(char));
     }
-    /*
-    char tempBuffer [100];
-    fgets(tempBuffer, 99, fp);
-    printf("%s", tempBuffer);
-    fgets(tempBuffer, 99, fp);
-    printf("%s", tempBuffer);
-    */
+    //char tempBuffer [100];
+    //fgets(tempBuffer, 99, fp);
+    //printf("%s", tempBuffer);
     //char sms[50][50];
     printf("Now reading in SMS and Timestamps\n");
     int timeHr = 0;
     int timeMin = 0;
     int smsInc = 0;
     int timeInc = 0;
-    int *time = (int *) malloc (smsSize * sizeof(int));
+    int *time = (int *) malloc ((smsSize) * sizeof(int));
     char timeFormat[8];
-    printf("%d\n", smsSize);
-    int tmpFuck = 0;
+    printf("%d messages to read in\n", smsSize);
+    //int tmpFuck = 0;
     // splitting sms and time into 2 arrays;
     for (int i = 0; i < (smsSize * 2); i++){
         if (i % 2 == 1){
@@ -78,13 +74,14 @@ int main(int argc, char *argv[]){
             fgets(sms[smsInc], 50, fp);
             //fscanf(fp, "%d %79s\n", &tmpFuck, sms[smsInc]);
             printf("SMS : %s\n", sms[smsInc]);
+            printf("SMS Inc: %d\n", smsInc);
             smsInc++;
         }   // Convert 12 HR time string to 24 HR int to array
             else {
             fscanf(fp, "%d:%d %7s\n", &timeHr, &timeMin, timeFormat);
-            printf("Time 1: %d %d %s\n", timeHr , timeMin, timeFormat);
+            //printf("Time 1: %d %d %s\n", timeHr , timeMin, timeFormat);
             timeHr = timeHr * 100;
-            printf("%s\n", timeFormat);
+            //printf("%s\n", timeFormat);
             if (strcmp(timeFormat,"PM\0") == 0 && timeHr != 1200){
                 timeHr += 1200;
             }
@@ -92,17 +89,15 @@ int main(int argc, char *argv[]){
             printf("Time %d\n", time[timeInc]);
             timeInc++;
         }
-        printf("%d\n", i);
+        //printf("%d\n", i);
     }
     
-    /*
     char **smsLower = (char **) malloc (smsSize * sizeof(char));
     for (int i = 0; i < smsSize; i++){
         smsLower[i] = (char *) malloc ((strlen(sms[i]) + 1) * sizeof(char));
         strcpy(smsLower[i], sms[i]);
     }
-    */
-    char smsLower[50][50];
+    //char smsLower[50][50];
     printf("Making comparisons case insenstive and removing LF\n");
     stringLower(dictSize, dictionary);
     stringLower(smsSize, smsLower);
@@ -184,14 +179,13 @@ int main(int argc, char *argv[]){
             }
         }
     }
-    /*
     for (int i = 0; i < smsSize; i++){
         free(sms[i]);
         free(smsLower[i]);
     }
     free(sms);
     free(smsLower);
-    */
+
     for (int i = 0; i < dictSize; i++){
         free(dictionary[i]);
     }
