@@ -82,8 +82,8 @@ int main(int argc, char *argv[]){
         sms[i] = (char *) malloc (startHeapSizeSMS * sizeof(char));
         memoryAllocateCheck(sms[i], 1);
     }
-    int timeHr = 0;
-    int timeMin = 0;
+    short timeHr = 0;
+    short timeMin = 0;
     int smsInc = 0;
     int timeInc = 0;
     int *time = (int *) malloc ((smsSize) * sizeof(int));
