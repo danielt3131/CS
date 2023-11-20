@@ -164,6 +164,8 @@ int main(int argc, char *argv[]){
        // printf("Time: %d\n", time[i]);
         if (time[i] > 699 || time[i] <= 100){
             printf("Message #%d: %s\n", i + 1, sms[i]);
+            free(sms[i]);
+            free(smsLower[i]);
         } else{
             // Assign token from smsLower[i]
             indivSMS = strtok(smsLower[i], " ");
@@ -220,17 +222,17 @@ int main(int argc, char *argv[]){
                 isProb = false;
                 iPos = 0;
                 lovePos = 0;
-                youPos = 0; 
+                youPos = 0;
+                free(smsLower[i]);
+                free(sms[i]);
             } else{
                 printf("Message #%d: %s\n", i + 1, sms[i]);
+                free(sms[i]);
+                free(smsLower[i]);
             }
         }
     }
     // Deallocating memory | giving ownership back to the OS kernel and to prevent memory leaks
-    for (int i = 0; i < smsSize; i++){
-        free(sms[i]);
-        free(smsLower[i]);
-    }
     free(sms);
     free(smsLower);
     for (int i = 0; i < dictSize; i++){
