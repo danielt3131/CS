@@ -49,32 +49,32 @@ int main(int argc, char *argv[]){
         printf("Unable to find file\n");
         return 0;
     }
-    char *readBuffer = (char *) malloc(50 * sizeof(char));
+    char *readBuffer = (char *) malloc(30 * sizeof(char));
     memoryAllocateCheck(readBuffer, 1);
     short dictSize;
-    fgets(readBuffer, 49, fp);
+    fgets(readBuffer, 29, fp);
     dictSize = atoi(readBuffer);
     char **dictionary = (char **) malloc (dictSize * sizeof(char*));
     memoryAllocateCheck(dictionary,1);
     for (int i = 0; i < dictSize; i++){
-        fgets(readBuffer, 49, fp);
+        fgets(readBuffer, 29, fp);
         dictionary[i] = (char *) malloc ((strlen(readBuffer) + 1) * sizeof(char));
         memoryAllocateCheck(dictionary[i], 1);
         strcpy(dictionary[i], readBuffer);
     }
     short probWordSize;
-    fgets(readBuffer, 49, fp);
+    fgets(readBuffer, 29, fp);
     probWordSize = atoi(readBuffer);
     char **probWords = (char **) malloc (probWordSize * sizeof(char*));
     memoryAllocateCheck(probWords, 1);
     for (int i = 0; i < probWordSize; i++){
-        fgets(readBuffer, 49, fp);
+        fgets(readBuffer, 29, fp);
         probWords[i] = (char *) malloc ((strlen(readBuffer) + 1) * sizeof(char));
         memoryAllocateCheck(probWords[i], 1);
         strcpy(probWords[i], readBuffer);
     }
     int smsSize;
-    fgets(readBuffer, 49, fp);
+    fgets(readBuffer, 29, fp);
     smsSize = atoi(readBuffer);
     char **sms = (char **) malloc (smsSize * sizeof(char*));
     memoryAllocateCheck(sms,1);
