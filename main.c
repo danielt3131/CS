@@ -41,7 +41,7 @@ void memoryAllocateCheck(void *array, int datatype){
     }
 }
 
-const int startHeapSizeSMS = 50;
+const int startHeapSizeSMS = 29;
 
 int main(int argc, char *argv[]){
     FILE *fp = fopen("textmsg.txt", "r");
@@ -86,7 +86,7 @@ int main(int argc, char *argv[]){
     short timeMin = 0;
     int smsInc = 0;
     int timeInc = 0;
-    int *time = (int *) malloc ((smsSize) * sizeof(int));
+    short *time = (short *) malloc ((smsSize) * sizeof(short));
     memoryAllocateCheck(time, 0);
     char *timeFormat = (char *) malloc(4 * sizeof(char));
     memoryAllocateCheck(timeFormat, 1);
@@ -97,18 +97,18 @@ int main(int argc, char *argv[]){
     }
     int smsReadLength = 0;
     // Integer value not needed after reading in the SMSes
-    int tmpFuck = 0;
+    short tmpFuck = 0;
     // splitting sms and time into 2 arrays;
     for (int i = 0; i < (smsSize * 2); i++){
         if (i % 2 == 1){
-            fscanf(fp, "%d", &tmpFuck);
+            fscanf(fp, "%hd", &tmpFuck);
             for(int k = 0; k < tmpFuck; k++){
-                fscanf(fp, "%49s", readBuffer);
+                fscanf(fp, "%29s", readBuffer);
                 strcat(readBuffer, " ");
                 smsReadLength = strlen(readBuffer) + smsReadLength;
                 if(smsReadLength >= smsHeapSize[smsInc]){
                     // Expand memory block of sms at smsInc to prevent buffer overflow
-                    smsHeapSize[smsInc] += 20;
+                    smsHeapSize[smsInc] = smsReadLength;
                     sms[smsInc] = (char *) realloc(sms[smsInc], smsHeapSize[smsInc]);
                     memoryAllocateCheck(sms[smsInc], 1);
                 }
@@ -137,7 +137,7 @@ int main(int argc, char *argv[]){
         smsLower[i] = (char *) malloc ((strlen(sms[i]) + 1) * sizeof(char));
         strcpy(smsLower[i], sms[i]);
     }
-    // Making all arrays of strings lowercase for upcoming comparision
+    // Making all arrays of strings lowercase for upcoming comparison
     stringLower(dictSize, dictionary);
     stringLower(smsSize, smsLower);
     stringLower(probWordSize, probWords);
@@ -158,7 +158,7 @@ int main(int argc, char *argv[]){
     int lovePos = 0;
     int youPos = 0;
     // SMS Loop
-    // The comparision
+    // The comparison
     printf("Start Compare\n");
     for (int i = 0; i < smsSize; i++){
        // printf("Time: %d\n", time[i]);
