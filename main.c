@@ -51,7 +51,7 @@ int main(int argc, char *argv[]){
     }
     char *readBuffer = (char *) malloc(50 * sizeof(char));
     memoryAllocateCheck(readBuffer, 1);
-    int dictSize;
+    short dictSize;
     fgets(readBuffer, 49, fp);
     dictSize = atoi(readBuffer);
     char **dictionary = (char **) malloc (dictSize * sizeof(char*));
@@ -62,7 +62,7 @@ int main(int argc, char *argv[]){
         memoryAllocateCheck(dictionary[i], 1);
         strcpy(dictionary[i], readBuffer);
     }
-    int probWordSize;
+    short probWordSize;
     fgets(readBuffer, 49, fp);
     probWordSize = atoi(readBuffer);
     char **probWords = (char **) malloc (probWordSize * sizeof(char*));
@@ -145,16 +145,14 @@ int main(int argc, char *argv[]){
     removeLF(dictSize, dictionary);
     removeLF(probWordSize, probWords);
     removeLF(smsSize, smsLower);
-    int numMispelled = 0;
-    int consecTest = 1;
+    short numMispelled = 0;
+    short consecTest = 1;
     int misplelledTotal = 0;
     int probTotal = 0;
     char *indivSMS = NULL;
-    int mispelledResult = 0;
+    short mispelledResult = 0;
     int probResult = 0;
     int indivSMSPosition = 0;
-    int consecTestPos = 0;
-    bool isConsec = false;
     bool isProb = false;
     int iPos = 0;
     int lovePos = 0;
