@@ -1,17 +1,12 @@
-8
-apple
-banana
+4
 i
 jason
 love
-mongoose
-surfing
 you
-3
+2
 ahole
 jerk
-scrub
-6
+5
 4:21 AM
 4 I LOVE you Jason
 3:34 PM
@@ -20,7 +15,5 @@ scrub
 4 Jsoan I lve you
 4:00 AM
 3 Jason you ahole
-4:21 AM
-4 I LOVE surfing mongoose
-2:21 AM
-4 jason you surfing scrub
+7:00 AM
+3 Jason you jerk
