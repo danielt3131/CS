@@ -119,7 +119,7 @@ int main(int argc, char *argv[]){
             smsInc++;
         }   // Convert 12 HR time string to 24 HR int to array
             else {
-            fscanf(fp, "%d:%d %3s\n", &timeHr, &timeMin, timeFormat);
+            fscanf(fp, "%hd:%hd %3s\n", &timeHr, &timeMin, timeFormat);
             timeHr = timeHr * 100;
             if (strcmp(timeFormat,"PM\0") == 0 && timeHr != 1200){
                 timeHr += 1200;
