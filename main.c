@@ -118,11 +118,11 @@ int main(int argc, char *argv[]){
     short timeMin = 0;
     int smsInc = 0;
     int timeInc = 0;
-    short *time = (short *) malloc ((smsSize) * sizeof(short));
+    unsigned short *time = (unsigned short *) malloc ((smsSize) * sizeof(unsigned short));
     memoryAllocateCheck(time, 0);
     char *timeFormat = (char *) malloc(4 * sizeof(char));
     memoryAllocateCheck(timeFormat, 1);
-    int *smsHeapSize = (int *) malloc(smsSize * sizeof(int));
+    unsigned short *smsHeapSize = (unsigned short *) malloc(smsSize * sizeof(unsigned short));
     memoryAllocateCheck(smsHeapSize, 0);
     for (int i = 0; i < smsSize; i++){
         smsHeapSize[i] = startHeapSizeSMS;
@@ -140,7 +140,7 @@ int main(int argc, char *argv[]){
                 smsReadLength = strlen(readBuffer) + smsReadLength;
                 if(smsReadLength >= smsHeapSize[smsInc]){
                     // Expand memory block of sms at smsInc to prevent buffer overflow
-                    smsHeapSize[smsInc] = smsReadLength;
+                    smsHeapSize[smsInc] = smsReadLength + 1;
                     sms[smsInc] = (char *) realloc(sms[smsInc], smsHeapSize[smsInc]);
                     memoryAllocateCheck(sms[smsInc], 1);
                 }
