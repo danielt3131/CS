@@ -56,22 +56,23 @@ int main(int argc, char *argv[]){
     dictSize = atoi(readBuffer);
     char **dictionary = (char **) malloc (dictSize * sizeof(char*));
     memoryAllocateCheck(dictionary,1);
-    for (int i = 0; i < dictSize; i++){
+    short f = 0;
+    for (f = 0; f < dictSize; f++){
         fgets(readBuffer, 29, fp);
-        dictionary[i] = (char *) malloc ((strlen(readBuffer) + 1) * sizeof(char));
-        memoryAllocateCheck(dictionary[i], 1);
-        strcpy(dictionary[i], readBuffer);
+        dictionary[f] = (char *) malloc ((strlen(readBuffer) + 1) * sizeof(char));
+        memoryAllocateCheck(dictionary[f], 1);
+        strcpy(dictionary[f], readBuffer);
     }
     short probWordSize;
     fgets(readBuffer, 29, fp);
     probWordSize = atoi(readBuffer);
     char **probWords = (char **) malloc (probWordSize * sizeof(char*));
     memoryAllocateCheck(probWords, 1);
-    for (int i = 0; i < probWordSize; i++){
+    for (f = 0; f < probWordSize; f++){
         fgets(readBuffer, 29, fp);
-        probWords[i] = (char *) malloc ((strlen(readBuffer) + 1) * sizeof(char));
-        memoryAllocateCheck(probWords[i], 1);
-        strcpy(probWords[i], readBuffer);
+        probWords[f] = (char *) malloc ((strlen(readBuffer) + 1) * sizeof(char));
+        memoryAllocateCheck(probWords[f], 1);
+        strcpy(probWords[f], readBuffer);
     }
     int smsSize;
     fgets(readBuffer, 29, fp);
