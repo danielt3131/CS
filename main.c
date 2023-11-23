@@ -133,8 +133,8 @@ int main(int argc, char **argv){
     smsFileSize = smsFileSize - timestmpSize;
     printf("SMS size | %ld\n", smsFileSize); 
     int indivSMSSize = ceil((double) (smsFileSize / smsSize));  // Average size of 1 SMS
-    int numofSMS = (heapLimit - heapSize - 3) / (3 * (2*sizeof(char) + indivSMSSize + sizeof(short)));
-    if(heapSize + indivSMSSize > heapLimit || numofSMS < 1){
+    int numOfSMS = (heapLimit - heapSize - 3) / (3 * (2*sizeof(char) + indivSMSSize + sizeof(short)));
+    if(heapSize + indivSMSSize > heapLimit || numOfSMS < 1){
         fclose(fp);
         free(readBuffer);
         for(int i = 0; i < dictSize; i++){
@@ -151,18 +151,18 @@ int main(int argc, char **argv){
         fprintf(stderr, "The absolute minimum amount of memory needed is %ld\n", heapSize + 2 * (indivSMSSize + 2 * sizeof(char*) + sizeof(short)) + 3);
         exit(0);
     }
-    printf("%d %d %d %d %d\n",heapLimit, heapSize, indivSMSSize, numofSMS, smsSize);
-    if (numofSMS >= smsSize){
-        numofSMS = smsSize;
+    printf("%d %d %d %d %d\n",heapLimit, heapSize, indivSMSSize, numOfSMS, smsSize);
+    if (numOfSMS >= smsSize){
+        numOfSMS = smsSize;
     } 
-    int numofLoops = (double) (smsSize / numofSMS);
-    int loopRemainder = smsSize - (numofLoops * numofSMS);  // Remainder no LCM aka prime number example 37/9 = 4.25 36/9 = 4
-    // Set numofLoops + 1
-    numofLoops++;
-    printf("%d\n", numofLoops);
-    char **sms = (char **) malloc (numofSMS * sizeof(char*));
+    int numOfLoops = (double) (smsSize / numOfSMS);
+    int loopRemainder = smsSize - (numOfLoops * numOfSMS);  // Remainder no LCM aka prime number example 37/9 = 4.25 36/9 = 4
+    // Set numOfLoops + 1
+    numOfLoops++;
+    printf("%d\n", numOfLoops);
+    char **sms = (char **) malloc (numOfSMS * sizeof(char*));
     memoryAllocateCheck(sms,1);
-    for (int i = 0; i < numofSMS; i++){
+    for (int i = 0; i < numOfSMS; i++){
         sms[i] = (char *) malloc (startHeapSizeSMS * sizeof(char));
         memoryAllocateCheck(sms[i], 1);
     } 
@@ -170,11 +170,11 @@ int main(int argc, char **argv){
     short timeMin = 0;
     int smsInc = 0;
     int timeInc = 0;
-    short *time = (short *) malloc ((numofSMS) * sizeof(short));
+    short *time = (short *) malloc ((numOfSMS) * sizeof(short));
     memoryAllocateCheck(time, 0);
     char *timeFormat = (char *) malloc(3 * sizeof(char));
     memoryAllocateCheck(timeFormat, 1);
-    short *smsHeapSize = (short *) malloc(numofSMS * sizeof(short));
+    short *smsHeapSize = (short *) malloc(numOfSMS * sizeof(short));
     memoryAllocateCheck(smsHeapSize, 0);
     short numMispelled = 0;
     short consecTest = 1;
@@ -196,28 +196,28 @@ int main(int argc, char **argv){
     // Removing \n LF in all strings for the upcoming comparison
     removeLF(dictSize, dictionary);
     removeLF(probWordSize, probWords);
-    char **smsLower = (char **) malloc (numofSMS * sizeof(char*));
+    char **smsLower = (char **) malloc (numOfSMS * sizeof(char*));
     // Integer value not needed after reading in the SMSes
     short tmpFuck = 0;
-    for (int t = 0; t < numofLoops; t++){
-        //Remainder check will set numofSMS to remainder amount
-        if (t == numofLoops - 1){
+    for (int t = 0; t < numOfLoops; t++){
+        //Remainder check will set numOfSMS to remainder amount
+        if (t == numOfLoops - 1){
             // Frees up unneeded elements in sms to prevent memory leaks
-            for (int i = loopRemainder; i < numofSMS; i++){
+            for (int i = loopRemainder; i < numOfSMS; i++){
                 free(sms[i]);
             }
-            numofSMS = loopRemainder; // Will ensure correct processing
+            numOfSMS = loopRemainder; // Will ensure correct processing
         }
         smsInc = 0;
         timeInc = 0;
         // splitting sms and time into 2 arrays;
-        for (int i = 0; i < numofSMS; i++){
+        for (int i = 0; i < numOfSMS; i++){
             smsHeapSize[i] = startHeapSizeSMS;
             strcpy(sms[i], "");
         }
         smsInc = 0;
        // printf("Reading next SMS batch\n");
-        for (int i = 0; i < (numofSMS * 2); i++){
+        for (int i = 0; i < (numOfSMS * 2); i++){
             if (i % 2 == 1){
                 fscanf(fp, "%hd", &tmpFuck);
                 for(int k = 0; k < tmpFuck; k++){
@@ -248,17 +248,17 @@ int main(int argc, char **argv){
                 timeInc++;
             }
         }
-        for (int i = 0; i < numofSMS; i++){
+        for (int i = 0; i < numOfSMS; i++){
             smsLower[i] = (char *) malloc ((strlen(sms[i]) + 1) * sizeof(char));
             memoryAllocateCheck(smsLower[i], 1);
             strcpy(smsLower[i], sms[i]);
         }
-        removeLF(numofSMS, smsLower);
-        stringLower(numofSMS, smsLower);
+        removeLF(numOfSMS, smsLower);
+        stringLower(numOfSMS, smsLower);
         // SMS Loop
         // The comparison
         //printf("Start Compare\n");
-        for (int i = 0; i < numofSMS; i++){
+        for (int i = 0; i < numOfSMS; i++){
             currentSMS++;
         // printf("Time: %d\n", time[i]);
             if (time[i] > 699 || time[i] <= 100){
@@ -337,7 +337,7 @@ int main(int argc, char **argv){
     free(readBuffer);
     free(timeFormat);
     free(smsHeapSize);
-    for (int i = 0; i < numofSMS; i++){
+    for (int i = 0; i < numOfSMS; i++){
         free(sms[i]);
     }
     free(sms);
