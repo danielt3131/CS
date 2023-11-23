@@ -27,31 +27,6 @@ void removeLF(int collumSize, char **string){
         }
     }
 }
-/* Scans each value in the string to see if the value is uppercase
- * Sets the character to lowercase if the character is uppercase.
- * Sets a boolean flag that the character was uppercase to later revert the change
- * The function will take in the size of the collums ie the length of the array of strings and the 2d array of boolean.
- */
-void upperCase(int collumSize,  char **string, bool **upperCase){
-    for (int i = 0; i < collumSize; i++){
-        for (int j = 0; j <= strlen(string[j]); j++){
-            if(isupper(string[i][j])){
-                upperCase[i][j] = true;
-                string[i][j] = tolower(string[i][j]);
-            } else{
-                upperCase[i][j] = false;
-            }
-        }
-    }
-}
-// Reverts all changes done by upperCase to print the original SMS.  This function only do the specified string in the array.
-void revertSms(char *string, bool *upperCase){
-    for (int i = 0; i <= strlen(string); i++){
-        if (upperCase[i] == true){
-            string[i] = toupper(string[i]);
-        }
-    }
-}
 
 // 1 = char 0 = int
 void memoryAllocateCheck(void *array, int datatype){
@@ -77,17 +52,6 @@ int main(int argc, char *argv[]){
     isUnix = false;
     #endif
     int winTroll = 0;
-    int maxheapSize = 0;
-    int heapSize = 0;
-   /*
-    * First user cli argument will set the maximum heapSize allowed
-    * If no argument is passed then the maximum heapSize will be 1 MiB
-    */
-    if (argc > 1){
-        maxheapSize = atoi(argv[1]);
-    } else {
-        maxheapSize = 1048576; // 1 MiB | 1 Mib = 1024 Kib and 1Kib = 1024 bytes / 2^10
-    }
     if (fp == NULL){
         printf("Unable to find file\n");
         if (isUnix == true){
@@ -118,18 +82,15 @@ int main(int argc, char *argv[]){
         }
     }
     char *readBuffer = (char *) malloc(30 * sizeof(char));
-    heapSize += 30; // For readBuffer
     memoryAllocateCheck(readBuffer, 1);
     short dictSize;
     fgets(readBuffer, 29, fp);
     dictSize = atoi(readBuffer);
     char **dictionary = (char **) malloc (dictSize * sizeof(char*));
-    heapSize += (dictSize * sizeof(char *)); // For **dictionary array of strings
     memoryAllocateCheck(dictionary,1);
     for (int i = 0; i < dictSize; i++){
         fgets(readBuffer, 29, fp);
         dictionary[i] = (char *) malloc ((strlen(readBuffer) + 1) * sizeof(char));
-        heapSize += (strlen(readBuffer) + 1); // For dictionary string
         memoryAllocateCheck(dictionary[i], 1);
         strcpy(dictionary[i], readBuffer);
     }
@@ -137,17 +98,14 @@ int main(int argc, char *argv[]){
     fgets(readBuffer, 29, fp);
     probWordSize = atoi(readBuffer);
     char **probWords = (char **) malloc (probWordSize * sizeof(char*));
-    heapSize += (probWordSize * sizeof(char *));
     memoryAllocateCheck(probWords, 1);
     for (int i = 0; i < probWordSize; i++){
         fgets(readBuffer, 29, fp);
         probWords[i] = (char *) malloc ((strlen(readBuffer) + 1) * sizeof(char));
-        heapSize += (strlen(readBuffer) + 1); // For probWord string
         memoryAllocateCheck(probWords[i], 1);
         strcpy(probWords[i], readBuffer);
     }
     int smsSize;
-    printf("Current heapSize | %d\n", heapSize);
     fgets(readBuffer, 29, fp);
     smsSize = atoi(readBuffer);
     char **sms = (char **) malloc (smsSize * sizeof(char*));
@@ -206,27 +164,19 @@ int main(int argc, char *argv[]){
     free(readBuffer);
     free(timeFormat);
     free(smsHeapSize);
-    bool **isUpperCase = (bool **) malloc(smsSize * sizeof(bool *));
-    for (int i = 0; i < smsSize; i++){
-        isUpperCase[i] = (bool *) malloc((strlen(sms[i]) + 1) * sizeof(bool));
-    }
-    /*
     char **smsLower = (char **) malloc (smsSize * sizeof(char*));
     for (int i = 0; i < smsSize; i++){
         smsLower[i] = (char *) malloc ((strlen(sms[i]) + 1) * sizeof(char));
         strcpy(smsLower[i], sms[i]);
     }
-    */
     // Making all arrays of strings lowercase for upcoming comparison
     stringLower(dictSize, dictionary);
-    upperCase(smsSize, sms, isUpperCase);
-    //stringLower(smsSize, smsLower);
+    stringLower(smsSize, smsLower);
     stringLower(probWordSize, probWords);
     // Removing \n LF in all strings for the upcoming comparison
     removeLF(dictSize, dictionary);
     removeLF(probWordSize, probWords);
-    //removeLF(smsSize, smsLower);
-    removeLF(smsSize, sms);
+    removeLF(smsSize, smsLower);
     short numMispelled = 0;
     short consecTest = 1;
     int misplelledTotal = 0;
@@ -239,25 +189,18 @@ int main(int argc, char *argv[]){
     int iPos = 0;
     int lovePos = 0;
     int youPos = 0;
-    for (int i = 0; i < smsSize; i++){
-        revertSms(sms[i], isUpperCase[i]);
-        printf("%s\n", sms[i]);
-    }
     // SMS Loop
     // The comparison
     printf("Start Compare\n");
     for (int i = 0; i < smsSize; i++){
        // printf("Time: %d\n", time[i]);
         if (time[i] > 699 || time[i] <= 100){
-            revertSms(sms[i], isUpperCase[i]);
             printf("Message #%d: %s\n", i + 1, sms[i]);
             free(sms[i]);
-            free(isUpperCase[i]);
-            //free(smsLower[i]);
+            free(smsLower[i]);
         } else{
             // Assign token from smsLower[i]
-            indivSMS = strtok(sms[i], " ");
-            //indivSMS = strtok(smsLower[i], " ");
+            indivSMS = strtok(smsLower[i], " ");
             // Loop until all words in string are compared
             while (indivSMS != NULL){
                 misplelledTotal = 0;
@@ -312,22 +255,18 @@ int main(int argc, char *argv[]){
                 iPos = 0;
                 lovePos = 0;
                 youPos = 0;
-                //free(smsLower[i]);
+                free(smsLower[i]);
                 free(sms[i]);
-                free(isUpperCase[i]);
             } else{
-                revertSms(sms[i], isUpperCase[i]);
                 printf("Message #%d: %s\n", i + 1, sms[i]);
                 free(sms[i]);
-                free(isUpperCase[i]);
-                //free(smsLower[i]);
+                free(smsLower[i]);
             }
         }
     }
     // Deallocating memory | giving ownership back to the OS kernel and to prevent memory leaks
     free(sms);
-    free(isUpperCase);
-    //free(smsLower);
+    free(smsLower);
     for (int i = 0; i < dictSize; i++){
         free(dictionary[i]);
     }
