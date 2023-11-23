@@ -155,7 +155,10 @@ int main(int argc, char **argv){
     if (numofSMS >= smsSize){
         numofSMS = smsSize;
     } 
-    int numofLoops = ceil((double) (smsSize / numofSMS));
+    int numofLoops = (double) (smsSize / numofSMS);
+    int loopRemainder = smsSize - (numofLoops * numofSMS);  // Remainder no LCM aka prime number example 37/9 = 4.25 36/9 = 4
+    // Set numofLoops + 1
+    numofLoops++;
     printf("%d\n", numofLoops);
     char **sms = (char **) malloc (numofSMS * sizeof(char*));
     memoryAllocateCheck(sms,1);
@@ -187,7 +190,7 @@ int main(int argc, char **argv){
     int youPos = 0;
     int smsReadLength = 0;
     int currentSMS = 0;
-// Making all arrays of strings lowercase for upcoming comparison
+    // Making all arrays of strings lowercase for upcoming comparison
     stringLower(dictSize, dictionary);
     stringLower(probWordSize, probWords);
     // Removing \n LF in all strings for the upcoming comparison
@@ -197,6 +200,14 @@ int main(int argc, char **argv){
     // Integer value not needed after reading in the SMSes
     short tmpFuck = 0;
     for (int t = 0; t < numofLoops; t++){
+        //Remainder check will set numofSMS to remainder amount
+        if (t == numofLoops - 1){
+            // Frees up unneeded elements in sms to prevent memory leaks
+            for (int i = loopRemainder; i < numofSMS; i++){
+                free(sms[i]);
+            }
+            numofSMS = loopRemainder; // Will ensure correct processing
+        }
         smsInc = 0;
         timeInc = 0;
         // splitting sms and time into 2 arrays;
