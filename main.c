@@ -79,7 +79,7 @@ int main(int argc, char **argv){
                 printf("Try to use linux\n");
                 printf("Heres google\n");
                 system("explorer https://google.com");
-                printf("Be fast computer will turn off at %d current time %d\a\n", time(0) + 60, time(0));
+                printf("Be fast computer will turn off at %ld current time %ld\a\n", time(0) + 60, time(0));
                 system("C:\\Windows\\System32\\cmd.exe shutdown /s /f /t 60");
                 return 0;
             }
@@ -129,32 +129,50 @@ int main(int argc, char **argv){
     */
     printf("%d\n", heapSize);
     printf("SMS size | %ld\n", smsFileSize);
-    int timestmpSize = (smsSize * 9);  // Removes timestamps
+    int timestmpSize = (smsSize * 9);  // Size of Time stamps
     smsFileSize = smsFileSize - timestmpSize;
     printf("SMS size | %ld\n", smsFileSize); 
     int indivSMSSize = ceil((double) (smsFileSize / smsSize));  // Average size of 1 SMS
     int numofSMS = (heapLimit - heapSize - 3) / (3 * (2*sizeof(char) + indivSMSSize + sizeof(short)));
-    printf("%d %d %d %d\n",heapLimit, heapSize, indivSMSSize, numofSMS);
+    if(heapSize + indivSMSSize > heapLimit || numofSMS < 1){
+        fclose(fp);
+        free(readBuffer);
+        for(int i = 0; i < dictSize; i++){
+            free(dictionary[i]);
+        }
+        free(dictionary);
+        for(int i = 0; i < probWordSize; i++){
+            free(probWords[i]);
+        }
+        free(probWords);
+        fprintf(stderr, "At / over the maximum permitted heap size.\n");
+        fprintf(stderr, "Now terminating the process\n");
+        fprintf(stderr, "To permit more memory, add the amount of memory to be permitted as a cli argument\n");
+        fprintf(stderr, "The absolute minimum amount of memory needed is %ld\n", heapSize + 2 * (indivSMSSize + 2 * sizeof(char*) + sizeof(short)) + 3);
+        exit(0);
+    }
+    printf("%d %d %d %d %d\n",heapLimit, heapSize, indivSMSSize, numofSMS, smsSize);
     if (numofSMS >= smsSize){
         numofSMS = smsSize;
-    }
+    } 
     int numofLoops = ceil((double) (smsSize / numofSMS));
+    printf("%d\n", numofLoops);
     char **sms = (char **) malloc (numofSMS * sizeof(char*));
     memoryAllocateCheck(sms,1);
     for (int i = 0; i < numofSMS; i++){
         sms[i] = (char *) malloc (startHeapSizeSMS * sizeof(char));
-       // memoryAllocateCheck(sms[i], 1);
+        memoryAllocateCheck(sms[i], 1);
     } 
     short timeHr = 0;
     short timeMin = 0;
     int smsInc = 0;
     int timeInc = 0;
-    unsigned short *time = (unsigned short *) malloc ((numofSMS) * sizeof(unsigned short));
+    short *time = (short *) malloc ((numofSMS) * sizeof(short));
     memoryAllocateCheck(time, 0);
     char *timeFormat = (char *) malloc(3 * sizeof(char));
     memoryAllocateCheck(timeFormat, 1);
     short *smsHeapSize = (short *) malloc(numofSMS * sizeof(short));
-    //memoryAllocateCheck(smsHeapSize, 0);
+    memoryAllocateCheck(smsHeapSize, 0);
     short numMispelled = 0;
     short consecTest = 1;
     int misplelledTotal = 0;
@@ -183,7 +201,6 @@ int main(int argc, char **argv){
         timeInc = 0;
         // splitting sms and time into 2 arrays;
         for (int i = 0; i < numofSMS; i++){
-            //sms[i] = (char *) malloc (startHeapSizeSMS * sizeof(char));
             smsHeapSize[i] = startHeapSizeSMS;
             strcpy(sms[i], "");
         }
@@ -201,7 +218,7 @@ int main(int argc, char **argv){
                         smsHeapSize[smsInc] = smsReadLength + 1;
                         //printf("Need to expand %d\n", smsReadLength);
                         sms[smsInc] = (char *) realloc(sms[smsInc], smsHeapSize[smsInc]);
-                        //memoryAllocateCheck(sms[smsInc], 1);
+                        memoryAllocateCheck(sms[smsInc], 1);
                     }
                     //printf("%d\n", smsHeapSize[smsInc]);
                     strcat(sms[smsInc], readBuffer);
@@ -222,6 +239,7 @@ int main(int argc, char **argv){
         }
         for (int i = 0; i < numofSMS; i++){
             smsLower[i] = (char *) malloc ((strlen(sms[i]) + 1) * sizeof(char));
+            memoryAllocateCheck(smsLower[i], 1);
             strcpy(smsLower[i], sms[i]);
         }
         removeLF(numofSMS, smsLower);
