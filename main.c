@@ -151,15 +151,20 @@ int main(int argc, char **argv){
         fprintf(stderr, "The absolute minimum amount of memory needed is %ld\n", heapSize + 2 * (indivSMSSize + 2 * sizeof(char*) + sizeof(short)) + 3);
         exit(0);
     }
-    printf("%d %d %d %d %d\n",heapLimit, heapSize, indivSMSSize, numOfSMS, smsSize);
+    //printf("%d %d %d %d %d\n",heapLimit, heapSize, indivSMSSize, numOfSMS, smsSize);
     if (numOfSMS >= smsSize){
         numOfSMS = smsSize;
     } 
     int numOfLoops = (double) (smsSize / numOfSMS);
-    int loopRemainder = smsSize - (numOfLoops * numOfSMS);  // Remainder no LCM aka prime number example 37/9 = 4.25 36/9 = 4
-    // Set numOfLoops + 1
-    numOfLoops++;
-    printf("%d\n", numOfLoops);
+    int loopRemainder = smsSize % numOfSMS;
+    //int loopRemainder = smsSize - (numOfLoops * numOfSMS);  // Remainder no LCM aka prime number example 37/9 = 4.25 36/9 = 4
+    // Set numOfLoops + 1 if there is a remainder
+    bool isRemainder = false;
+    if (loopRemainder > 0){
+        numOfLoops++;
+        isRemainder = true;
+    }
+    //printf("%d\n", numOfLoops);
     char **sms = (char **) malloc (numOfSMS * sizeof(char*));
     memoryAllocateCheck(sms,1);
     for (int i = 0; i < numOfSMS; i++){
@@ -174,7 +179,7 @@ int main(int argc, char **argv){
     memoryAllocateCheck(time, 0);
     char *timeFormat = (char *) malloc(3 * sizeof(char));
     memoryAllocateCheck(timeFormat, 1);
-    short *smsHeapSize = (short *) malloc(numOfSMS * sizeof(short));
+    unsigned short *smsHeapSize = (unsigned short *) malloc(numOfSMS * sizeof(short));
     memoryAllocateCheck(smsHeapSize, 0);
     short numMispelled = 0;
     short consecTest = 1;
@@ -201,7 +206,7 @@ int main(int argc, char **argv){
     short tmpFuck = 0;
     for (int t = 0; t < numOfLoops; t++){
         //Remainder check will set numOfSMS to remainder amount
-        if (t == numOfLoops - 1){
+        if (t == numOfLoops - 1 && isRemainder == true){
             // Frees up unneeded elements in sms to prevent memory leaks
             for (int i = loopRemainder; i < numOfSMS; i++){
                 free(sms[i]);
