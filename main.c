@@ -43,22 +43,26 @@ void memoryAllocateCheck(void *array, int datatype){
     }
 }
 
-int stringSizeToLF(void *file){
+void getSMS(void *file, char **sms, int *smsInc, char *readBuffer, int *tmp){
     int fileInitPos = ftell(file);
     int filePosition = fileInitPos;
     char currentCharacter = '\0';
     while (currentCharacter != '\n'){
-        fseek(file,filePosition,SEEK_SET);
+        fseek(file, filePosition, SEEK_SET);
         fscanf(file, "%c", &currentCharacter);
         if (currentCharacter == '\n'){
             break;
         }
         filePosition++;
     }
-    fseek(file, 0, SEEK_END);
     fseek(file, fileInitPos, SEEK_SET);
-    printf("%d\n", filePosition - fileInitPos);
-    return filePosition - fileInitPos;
+    sms[(*smsInc)] = (char *) calloc((filePosition - fileInitPos), sizeof(char));
+    fscanf(file, "%d", tmp);
+    for(int k = 0; k < (*tmp); k++){
+        fscanf(file, "%29s", readBuffer);
+        strcat(readBuffer, " ");
+        strcat(sms[(*smsInc)], readBuffer);
+    }
 }
 
 const int startHeapSizeSMS = 29;
@@ -197,8 +201,8 @@ int main(int argc, char **argv){
     memoryAllocateCheck(time, 0);
     char *timeFormat = (char *) malloc(3 * sizeof(char));
     memoryAllocateCheck(timeFormat, 1);
-    unsigned short *smsHeapSize = (unsigned short *) malloc(numOfSMS * sizeof(short));
-    memoryAllocateCheck(smsHeapSize, 0);
+    //unsigned short *smsHeapSize = (unsigned short *) malloc(numOfSMS * sizeof(short));
+    //memoryAllocateCheck(smsHeapSize, 0);
     short numMispelled = 0;
     short consecTest = 1;
     int misplelledTotal = 0;
@@ -211,7 +215,6 @@ int main(int argc, char **argv){
     int iPos = 0;
     int lovePos = 0;
     int youPos = 0;
-    int smsReadLength = 0;
     int currentSMS = 0;
     // Making all arrays of strings lowercase for upcoming comparison
     stringLower(dictSize, dictionary);
@@ -221,45 +224,24 @@ int main(int argc, char **argv){
     removeLF(probWordSize, probWords);
     char **smsLower = (char **) malloc (numOfSMS * sizeof(char*));
     // Integer value not needed after reading in the SMSes
-    short tmpFuck = 0;
+    int tmpFuck = 0;
     for (int t = 0; t < numOfLoops; t++){
         //Remainder check will set numOfSMS to remainder amount
         if (t == numOfLoops - 1 && isRemainder == true){
-            // Frees up unneeded elements in sms to prevent memory leaks
-            for (int i = loopRemainder; i < numOfSMS; i++){
-                //free(sms[i]);
-            }
             numOfSMS = loopRemainder; // Will ensure correct processing
         }
         smsInc = 0;
         timeInc = 0;
         // splitting sms and time into 2 arrays;
         for (int i = 0; i < numOfSMS; i++){
-            smsHeapSize[i] = startHeapSizeSMS;
+            //smsHeapSize[i] = startHeapSizeSMS;
             //strcpy(sms[i], "");
         }
         smsInc = 0;
        // printf("Reading next SMS batch\n");
         for (int i = 0; i < (numOfSMS * 2); i++){
             if (i % 2 == 1){
-                fscanf(fp, "%hd", &tmpFuck);
-                sms[smsInc] = (char *) calloc (stringSizeToLF(fp),sizeof(char));
-                for(int k = 0; k < tmpFuck; k++){
-                    fscanf(fp, "%30s", readBuffer);
-                    strcat(readBuffer, " ");
-                    smsReadLength = strlen(readBuffer) + smsReadLength;
-                    if(smsReadLength >= smsHeapSize[smsInc]){
-                        // Expand memory block of sms at smsInc to prevent buffer overflow
-                       // smsHeapSize[smsInc] = smsReadLength + 1;
-                        //printf("Need to expand %d\n", smsReadLength);
-                        //sms[smsInc] = (char *) realloc(sms[smsInc], smsHeapSize[smsInc]);
-                        //memoryAllocateCheck(sms[smsInc], 1);
-                    }
-                    //printf("%d\n", smsHeapSize[smsInc]);
-                    strcat(sms[smsInc], readBuffer);
-                }
-                smsReadLength = 0;
-                //printf("%d %d\n", smsInc, t);
+                getSMS(fp, sms, &smsInc, readBuffer, &tmpFuck);
                 smsInc++;
             }   // Convert 12 HR time string to 24 HR int to array
                 else {
@@ -360,7 +342,6 @@ int main(int argc, char **argv){
     fclose(fp);
     free(readBuffer);
     free(timeFormat);
-    free(smsHeapSize);
     for (int i = 0; i < numOfSMS; i++){
         //free(sms[i]);
     }
