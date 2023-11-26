@@ -43,7 +43,7 @@ void memoryAllocateCheck(void *array, int datatype){
     }
 }
 
-void stringSizeToLF(void *file){
+int stringSizeToLF(void *file){
     int fileInitPos = ftell(file);
     int filePosition = fileInitPos;
     char currentCharacter = '\0';
