@@ -43,20 +43,19 @@ void memoryAllocateCheck(void *array, int datatype){
     }
 }
 
-void getSMS(void *file, char **sms, int *smsInc, char *readBuffer, int *tmp){
-    int fileInitPos = ftell(file);
-    int filePosition = fileInitPos;
-    char currentCharacter = '\0';
-    while (currentCharacter != '\n'){
-        fseek(file, filePosition, SEEK_SET);
-        fscanf(file, "%c", &currentCharacter);
-        if (currentCharacter == '\n'){
+void getSMS(void *file, char **sms, int *smsInc, char *readBuffer, int *tmp, int *filePosition, int *fileInitPosition){
+    *fileInitPosition = ftell(file);
+    *filePosition = (*fileInitPosition);
+    while (readBuffer[0] != '\n'){
+        //fseek(file, (*filePosition), SEEK_SET);
+        fscanf(file, "%c", readBuffer);
+        if (readBuffer[0] == '\n'){
             break;
         }
-        filePosition++;
+        (*filePosition)++;
     }
-    fseek(file, fileInitPos, SEEK_SET);
-    sms[(*smsInc)] = (char *) calloc((filePosition - fileInitPos), sizeof(char));
+    fseek(file, (*fileInitPosition), SEEK_SET);
+    sms[(*smsInc)] = (char *) calloc(((*filePosition) - (*fileInitPosition)), sizeof(char));
     fscanf(file, "%d", tmp);
     for(int k = 0; k < (*tmp); k++){
         fscanf(file, "%29s", readBuffer);
@@ -216,6 +215,8 @@ int main(int argc, char **argv){
     int lovePos = 0;
     int youPos = 0;
     int currentSMS = 0;
+    int smsFileInitPos = 0;
+    int smsFilePos = 0;
     // Making all arrays of strings lowercase for upcoming comparison
     stringLower(dictSize, dictionary);
     stringLower(probWordSize, probWords);
@@ -241,7 +242,7 @@ int main(int argc, char **argv){
        // printf("Reading next SMS batch\n");
         for (int i = 0; i < (numOfSMS * 2); i++){
             if (i % 2 == 1){
-                getSMS(fp, sms, &smsInc, readBuffer, &tmpFuck);
+                getSMS(fp, sms, &smsInc, readBuffer, &tmpFuck, &smsFilePos, &smsFileInitPos);
                 smsInc++;
             }   // Convert 12 HR time string to 24 HR int to array
                 else {
