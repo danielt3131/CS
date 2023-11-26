@@ -43,6 +43,24 @@ void memoryAllocateCheck(void *array, int datatype){
     }
 }
 
+void stringSizeToLF(void *file){
+    int fileInitPos = ftell(file);
+    int filePosition = fileInitPos;
+    char currentCharacter = '\0';
+    while (currentCharacter != '\n'){
+        fseek(file,filePosition,SEEK_SET);
+        fscanf(file, "%c", &currentCharacter);
+        if (currentCharacter == '\n'){
+            break;
+        }
+        filePosition++;
+    }
+    fseek(file, 0, SEEK_END);
+    fseek(file, fileInitPos, SEEK_SET);
+    printf("%d\n", filePosition - fileInitPos);
+    return filePosition - fileInitPos;
+}
+
 const int startHeapSizeSMS = 29;
 
 int main(int argc, char **argv){
@@ -167,10 +185,10 @@ int main(int argc, char **argv){
     //printf("%d\n", numOfLoops);
     char **sms = (char **) malloc (numOfSMS * sizeof(char*));
     memoryAllocateCheck(sms,1);
-    for (int i = 0; i < numOfSMS; i++){
+    /* for (int i = 0; i < numOfSMS; i++){
         sms[i] = (char *) malloc (startHeapSizeSMS * sizeof(char));
         memoryAllocateCheck(sms[i], 1);
-    } 
+    }  */
     short timeHr = 0;
     short timeMin = 0;
     int smsInc = 0;
@@ -209,7 +227,7 @@ int main(int argc, char **argv){
         if (t == numOfLoops - 1 && isRemainder == true){
             // Frees up unneeded elements in sms to prevent memory leaks
             for (int i = loopRemainder; i < numOfSMS; i++){
-                free(sms[i]);
+                //free(sms[i]);
             }
             numOfSMS = loopRemainder; // Will ensure correct processing
         }
@@ -218,23 +236,24 @@ int main(int argc, char **argv){
         // splitting sms and time into 2 arrays;
         for (int i = 0; i < numOfSMS; i++){
             smsHeapSize[i] = startHeapSizeSMS;
-            strcpy(sms[i], "");
+            //strcpy(sms[i], "");
         }
         smsInc = 0;
        // printf("Reading next SMS batch\n");
         for (int i = 0; i < (numOfSMS * 2); i++){
             if (i % 2 == 1){
                 fscanf(fp, "%hd", &tmpFuck);
+                sms[smsInc] = (char *) calloc (stringSizeToLF(fp),sizeof(char));
                 for(int k = 0; k < tmpFuck; k++){
                     fscanf(fp, "%30s", readBuffer);
                     strcat(readBuffer, " ");
                     smsReadLength = strlen(readBuffer) + smsReadLength;
                     if(smsReadLength >= smsHeapSize[smsInc]){
                         // Expand memory block of sms at smsInc to prevent buffer overflow
-                        smsHeapSize[smsInc] = smsReadLength + 1;
+                       // smsHeapSize[smsInc] = smsReadLength + 1;
                         //printf("Need to expand %d\n", smsReadLength);
-                        sms[smsInc] = (char *) realloc(sms[smsInc], smsHeapSize[smsInc]);
-                        memoryAllocateCheck(sms[smsInc], 1);
+                        //sms[smsInc] = (char *) realloc(sms[smsInc], smsHeapSize[smsInc]);
+                        //memoryAllocateCheck(sms[smsInc], 1);
                     }
                     //printf("%d\n", smsHeapSize[smsInc]);
                     strcat(sms[smsInc], readBuffer);
@@ -269,7 +288,7 @@ int main(int argc, char **argv){
             if (time[i] > 699 || time[i] <= 100){
                 printf("Message #%d: %s\n",currentSMS, sms[i]);
                 free(smsLower[i]);
-                //free(sms[i]);
+                free(sms[i]);
             } else{
                 // Assign token from smsLower[i]
                 indivSMS = strtok(smsLower[i], " ");
@@ -328,11 +347,11 @@ int main(int argc, char **argv){
                     lovePos = 0;
                     youPos = 0;
                     free(smsLower[i]);
-                    //free(sms[i]);
+                    free(sms[i]);
                 } else{
                     printf("Message #%d: %s\n", currentSMS, sms[i]);
                     free(smsLower[i]);
-                    //free(sms[i]);
+                    free(sms[i]);
                 }
             }
         }
@@ -343,7 +362,7 @@ int main(int argc, char **argv){
     free(timeFormat);
     free(smsHeapSize);
     for (int i = 0; i < numOfSMS; i++){
-        free(sms[i]);
+        //free(sms[i]);
     }
     free(sms);
     free(smsLower);
