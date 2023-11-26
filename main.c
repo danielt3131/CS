@@ -6,8 +6,8 @@
 #include <time.h>
 #include <math.h>
 
-void stringLower(int collumSize, char **string){
-    for (int i = 0; i < collumSize; i++){
+void stringLower(int *collumSize, char **string){
+    for (int i = 0; i < (*collumSize); i++){
         //printf("Current String %s\n", string[i]);
         for (int j = 0; j <= strlen(string[i]); j++){
             string[i][j] = tolower(string[i][j]);
@@ -16,8 +16,8 @@ void stringLower(int collumSize, char **string){
     }
 }
 
-void removeLF(int collumSize, char **string){
-    for (int i = 0; i < collumSize; i++){
+void removeLF(int *collumSize, char **string){
+    for (int i = 0; i < (*collumSize); i++){
         for (int j = 0; j <= strlen(string[i]); j++){
             //printf("%c", string[i][j]);
             if (string[i][j] == '\n'){
@@ -56,6 +56,7 @@ void getSMS(void *file, char **sms, int *smsInc, char *readBuffer, int *tmp, int
     }
     fseek(file, (*fileInitPosition), SEEK_SET);
     sms[(*smsInc)] = (char *) calloc(((*filePosition) - (*fileInitPosition)), sizeof(char));
+    memoryAllocateCheck(sms[(*smsInc)], 1);
     fscanf(file, "%d", tmp);
     for(int k = 0; k < (*tmp); k++){
         fscanf(file, "%29s", readBuffer);
@@ -109,7 +110,7 @@ int main(int argc, char **argv){
     char *readBuffer = (char *) malloc(30 * sizeof(char));
     memoryAllocateCheck(readBuffer, 1);
     int heapSize = 30;
-    short dictSize;
+    int dictSize;
     fgets(readBuffer, 30, fp);
     dictSize = atoi(readBuffer);
     char **dictionary = (char **) malloc (dictSize * sizeof(char*));
@@ -122,7 +123,7 @@ int main(int argc, char **argv){
         heapSize += strlen(readBuffer) +1;
         strcpy(dictionary[i], readBuffer);
     }
-    short probWordSize;
+    int probWordSize;
     fgets(readBuffer, 30, fp);
     probWordSize = atoi(readBuffer);
     char **probWords = (char **) malloc (probWordSize * sizeof(char*));
@@ -218,11 +219,11 @@ int main(int argc, char **argv){
     int smsFileInitPos = 0;
     int smsFilePos = 0;
     // Making all arrays of strings lowercase for upcoming comparison
-    stringLower(dictSize, dictionary);
-    stringLower(probWordSize, probWords);
+    stringLower(&dictSize, dictionary);
+    stringLower(&probWordSize, probWords);
     // Removing \n LF in all strings for the upcoming comparison
-    removeLF(dictSize, dictionary);
-    removeLF(probWordSize, probWords);
+    removeLF(&dictSize, dictionary);
+    removeLF(&probWordSize, probWords);
     char **smsLower = (char **) malloc (numOfSMS * sizeof(char*));
     // Integer value not needed after reading in the SMSes
     int tmpFuck = 0;
@@ -234,10 +235,6 @@ int main(int argc, char **argv){
         smsInc = 0;
         timeInc = 0;
         // splitting sms and time into 2 arrays;
-        for (int i = 0; i < numOfSMS; i++){
-            //smsHeapSize[i] = startHeapSizeSMS;
-            //strcpy(sms[i], "");
-        }
         smsInc = 0;
        // printf("Reading next SMS batch\n");
         for (int i = 0; i < (numOfSMS * 2); i++){
@@ -260,8 +257,8 @@ int main(int argc, char **argv){
             memoryAllocateCheck(smsLower[i], 1);
             strcpy(smsLower[i], sms[i]);
         }
-        removeLF(numOfSMS, smsLower);
-        stringLower(numOfSMS, smsLower);
+        removeLF(&numOfSMS, smsLower);
+        stringLower(&numOfSMS, smsLower);
         // SMS Loop
         // The comparison
         //printf("Start Compare\n");
