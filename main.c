@@ -44,7 +44,6 @@ void memoryAllocateCheck(void *array, int datatype){
 }
 const int startHeapSizeSMS = 29;
 void getSMS(void *file, char **sms, int *smsInc, char *readBuffer, int *tmp, int *filePosition, int *fileInitPosition, bool *doFile){
-    printf("%d\n", *doFile);
     if ((*doFile) == true){
         *fileInitPosition = ftell(file);
         *filePosition = (*fileInitPosition);
@@ -74,7 +73,6 @@ void getSMS(void *file, char **sms, int *smsInc, char *readBuffer, int *tmp, int
             if((*fileInitPosition) >= (*filePosition)){
                 *filePosition = (*fileInitPosition) + 29; // Changing the heap size of SMS
                 sms[(*smsInc)] = (char *) realloc(sms[(*smsInc)], (*filePosition));
-                printf("Reallocated\n\a");
             }
         }
         strcat(sms[(*smsInc)], readBuffer);
@@ -93,7 +91,6 @@ int main(int argc, char **argv){
         heapLimit = atoi(argv[1]);
         if(atoi(argv[2]) == 1){
             additionalMemoryOptimizations = true;
-            printf("Gello\n\a");
         }
     }
     bool isUnix = true;
@@ -266,7 +263,7 @@ int main(int argc, char **argv){
                 smsInc++;
             }   // Convert 12 HR time string to 24 HR int to array
                 else {
-                fscanf(fp, "%hd:%hd %3s\n", &timeHr, &timeMin, timeFormat);
+                fscanf(fp, "%hd:%hd %2s\n", &timeHr, &timeMin, timeFormat);
                 timeHr = timeHr * 100;
                 if (strcmp(timeFormat,"PM\0") == 0 && timeHr != 1200){
                     timeHr += 1200;
