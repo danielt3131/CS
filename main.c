@@ -42,36 +42,59 @@ void memoryAllocateCheck(void *array, int datatype){
         }
     }
 }
-
-void getSMS(void *file, char **sms, int *smsInc, char *readBuffer, int *tmp, int *filePosition, int *fileInitPosition){
-    *fileInitPosition = ftell(file);
-    *filePosition = (*fileInitPosition);
-    while (readBuffer[0] != '\n'){
-        //fseek(file, (*filePosition), SEEK_SET);
-        fscanf(file, "%c", readBuffer);
-        if (readBuffer[0] == '\n'){
-            break;
+const int startHeapSizeSMS = 29;
+void getSMS(void *file, char **sms, int *smsInc, char *readBuffer, int *tmp, int *filePosition, int *fileInitPosition, bool *doFile){
+    printf("%d\n", *doFile);
+    if ((*doFile) == true){
+        *fileInitPosition = ftell(file);
+        *filePosition = (*fileInitPosition);
+        while (readBuffer[0] != '\n'){
+            //fseek(file, (*filePosition), SEEK_SET);
+            fscanf(file, "%c", readBuffer);
+            if (readBuffer[0] == '\n'){
+                break;
+            }
+            (*filePosition)++;
         }
-        (*filePosition)++;
+        fseek(file, (*fileInitPosition), SEEK_SET);
+        sms[(*smsInc)] = (char *) calloc(((*filePosition) - (*fileInitPosition)), sizeof(char));
+        memoryAllocateCheck(sms[(*smsInc)], 1);
+    } else {
+        *filePosition = 30;
+        *fileInitPosition = 0;
+        sms[(*smsInc)] = (char *) calloc ((*filePosition), sizeof(char));
+        memoryAllocateCheck(sms[(*smsInc)], 1);
     }
-    fseek(file, (*fileInitPosition), SEEK_SET);
-    sms[(*smsInc)] = (char *) calloc(((*filePosition) - (*fileInitPosition)), sizeof(char));
-    memoryAllocateCheck(sms[(*smsInc)], 1);
     fscanf(file, "%d", tmp);
     for(int k = 0; k < (*tmp); k++){
         fscanf(file, "%29s", readBuffer);
         strcat(readBuffer, " ");
+        if ((*doFile) == false){
+            *fileInitPosition = strlen(readBuffer) + (*fileInitPosition);
+            if((*fileInitPosition) >= (*filePosition)){
+                *filePosition = (*fileInitPosition) + 29; // Changing the heap size of SMS
+                sms[(*smsInc)] = (char *) realloc(sms[(*smsInc)], (*filePosition));
+                printf("Reallocated\n\a");
+            }
+        }
         strcat(sms[(*smsInc)], readBuffer);
     }
 }
 
-const int startHeapSizeSMS = 29;
 
 int main(int argc, char **argv){
     FILE *fp = fopen("textmsg.txt", "r");
     int heapLimit = 1024;
+    bool additionalMemoryOptimizations = false;
     if (argc > 1){
         heapLimit = atoi(argv[1]);
+    }
+    if (argc > 2){
+        heapLimit = atoi(argv[1]);
+        if(atoi(argv[2]) == 1){
+            additionalMemoryOptimizations = true;
+            printf("Gello\n\a");
+        }
     }
     bool isUnix = true;
     #ifdef _WIN32
@@ -239,7 +262,7 @@ int main(int argc, char **argv){
        // printf("Reading next SMS batch\n");
         for (int i = 0; i < (numOfSMS * 2); i++){
             if (i % 2 == 1){
-                getSMS(fp, sms, &smsInc, readBuffer, &tmpFuck, &smsFilePos, &smsFileInitPos);
+                getSMS(fp, sms, &smsInc, readBuffer, &tmpFuck, &smsFilePos, &smsFileInitPos, &additionalMemoryOptimizations);
                 smsInc++;
             }   // Convert 12 HR time string to 24 HR int to array
                 else {
