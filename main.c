@@ -206,8 +206,10 @@ int main(int argc, char **argv){
     printf("SMS size | %ld\n", smsFileSize); 
     int indivSMSSize = ceil((double) (smsFileSize / smsSize));  // Average size of 1 SMS
     // Absolute minimum heapLimit set from argument
-    if (strcmp(argv[1], "10") == 0){
+    if (argc > 1){
+        if (strcmp(argv[1], "10") == 0){
         heapLimit = heapSize + 2 * (indivSMSSize + 2 * sizeof(char*) + sizeof(short)) + 3;
+        }
     }
     
     int numOfSMS = (heapLimit - heapSize - 3) / (3 * (2*sizeof(char) + indivSMSSize + sizeof(short)));
