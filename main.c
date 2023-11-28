@@ -342,15 +342,14 @@ int main(int argc, char **argv){
                     for (int k = 0; k < probWordSize; k++){
                         probResult = strcmp(indivSMS, probWords[k]);
                         if (probResult > 0 || probResult < 0){
-                            probResult = 1;
-                            probTotal += probTotal;
+                            probTotal++;
                         }
                     }
                     if (misplelledTotal == dictSize){
                         numMispelled++;
                         misplelledTotal = 0;
                     }
-                    if (numMispelled >= 3 || (probTotal >= probWordSize)){
+                    if (numMispelled >= 3 || (probTotal < probWordSize)){
                         isProb = true;
                         numMispelled = 0;
                         probTotal = 0;
