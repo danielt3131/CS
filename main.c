@@ -208,10 +208,9 @@ int main(int argc, char **argv){
     // Absolute minimum heapLimit set from argument
     if (argc > 1){
         if (strcmp(argv[1], "10") == 0){
-        heapLimit = heapSize + 2 * (indivSMSSize + 2 * sizeof(char*) + sizeof(short)) + 3;
+        heapLimit = heapSize + 2 * (indivSMSSize + 2 * sizeof(char*) + sizeof(short)) + 4;
         }
     }
-    
     int numOfSMS = (heapLimit - heapSize - 3) / (3 * (2*sizeof(char) + indivSMSSize + sizeof(short)));
     if(heapSize + indivSMSSize > heapLimit || numOfSMS < 1){
         fclose(fp);
