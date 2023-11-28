@@ -81,16 +81,44 @@ void getSMS(void *file, char **sms, int *smsInc, char *readBuffer, int *tmp, int
     }
 }
 
+/*
+ *  Arguments -> scale from 1 to 10 for memory efficiency 
+ *  1 = fastest time but higest memory consumption -> heapLimit will be set to 1GiB
+ *  2 = heapLimit set to 500 KiB
+ *  3 = heapLimit set to 200 KiB
+ *  4 = heapLimit set to 100 KiB
+ *  5 = heapLimit set to 50 KiB
+ *  6 = heapLimit set to 20 KiB
+ *  7 = heapLimit set to 10 KiB
+ *  8 = heapLimit set to 5 KiB 
+ *  9 = heapLimit set to 1 KiB
+ *  10 = least memory used but highest run time -> heapLimit will be set to absoulute mininum
+ */
 
 int main(int argc, char **argv){
     FILE *fp = fopen("textmsg.txt", "r");
     int heapLimit = 1024;
     bool additionalMemoryOptimizations = false;
     if (argc > 1){
-        heapLimit = atoi(argv[1]);
+        if (strcmp(argv[1], "1") == 0){
+            heapLimit = (1024 * 1024 * 1024);
+        } else if (strcmp(argv[1], "2") == 0){
+            heapLimit = 500 * 1024;
+        } else if (strcmp(argv[1], "3") == 0){
+            heapLimit = 200 * 1024;
+        } else if (strcmp(argv[1], "4") == 0){
+            heapLimit = 100 * 1024;
+        } else if (strcmp(argv[1], "5") == 0){
+            heapLimit = 50 * 1024;
+        } else if (strcmp(argv[1], "6") == 0){
+            heapLimit = 20 * 1024;
+        } else if (strcmp(argv[1], "7") == 0){
+            heapLimit = 10 * 1024;
+        } else if (strcmp(argv[1], "8") == 0){
+            heapLimit = 5 * 1024;
+        }
     }
     if (argc > 2){
-        heapLimit = atoi(argv[1]);
         if(atoi(argv[2]) == 1){
             additionalMemoryOptimizations = true;
         }
@@ -177,6 +205,11 @@ int main(int argc, char **argv){
     smsFileSize = smsFileSize - timestmpSize;
     printf("SMS size | %ld\n", smsFileSize); 
     int indivSMSSize = ceil((double) (smsFileSize / smsSize));  // Average size of 1 SMS
+    // Absolute minimum heapLimit set from argument
+    if (strcmp(argv[1], "10") == 0){
+        heapLimit = heapSize + 2 * (indivSMSSize + 2 * sizeof(char*) + sizeof(short)) + 3;
+    }
+    
     int numOfSMS = (heapLimit - heapSize - 3) / (3 * (2*sizeof(char) + indivSMSSize + sizeof(short)));
     if(heapSize + indivSMSSize > heapLimit || numOfSMS < 1){
         fclose(fp);
