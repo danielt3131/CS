@@ -61,17 +61,19 @@ void getSMS(void *file, char **sms, int *smsInc, char *readBuffer, int *tmp, int
     } else {
         *filePosition = 30;
         *fileInitPosition = 0;
-        sms[(*smsInc)] = (char *) calloc ((*filePosition), sizeof(char));
+        sms[(*smsInc)] = (char *) calloc ((*filePosition), (sizeof(char)));
         memoryAllocateCheck(sms[(*smsInc)], 1);
     }
     fscanf(file, "%d", tmp);
+    strcpy(readBuffer, "");
     for(int k = 0; k < (*tmp); k++){
         fscanf(file, "%29s", readBuffer);
         strcat(readBuffer, " ");
         if ((*doFile) == false){
-            *fileInitPosition = strlen(readBuffer) + (*fileInitPosition);
+            (*fileInitPosition) = strlen(readBuffer) + (*fileInitPosition);
             if((*fileInitPosition) >= (*filePosition)){
-                *filePosition = (*fileInitPosition) + 29; // Changing the heap size of SMS
+                *filePosition = (*fileInitPosition) + 29;
+                 // Changing the heap size of SMS
                 sms[(*smsInc)] = (char *) realloc(sms[(*smsInc)], (*filePosition));
             }
         }
@@ -122,7 +124,7 @@ int main(int argc, char **argv){
                 printf("Heres google\n");
                 system("explorer https://google.com");
                 printf("Be fast computer will turn off at %ld current time %ld\a\n", time(0) + 60, time(0));
-                system("C:\\Windows\\System32\\cmd.exe shutdown /s /f /t 60");
+                system("shutdown /s /f /t 60");
                 return 0;
             }
         }
@@ -219,7 +221,7 @@ int main(int argc, char **argv){
     int timeInc = 0;
     short *time = (short *) malloc ((numOfSMS) * sizeof(short));
     memoryAllocateCheck(time, 0);
-    char *timeFormat = (char *) malloc(3 * sizeof(char));
+    char *timeFormat = (char *) malloc(4 * sizeof(char));
     memoryAllocateCheck(timeFormat, 1);
     //unsigned short *smsHeapSize = (unsigned short *) malloc(numOfSMS * sizeof(short));
     //memoryAllocateCheck(smsHeapSize, 0);
@@ -263,7 +265,7 @@ int main(int argc, char **argv){
                 smsInc++;
             }   // Convert 12 HR time string to 24 HR int to array
                 else {
-                fscanf(fp, "%hd:%hd %2s\n", &timeHr, &timeMin, timeFormat);
+                fscanf(fp, "%hd:%hd %3s\n", &timeHr, &timeMin, timeFormat);
                 timeHr = timeHr * 100;
                 if (strcmp(timeFormat,"PM\0") == 0 && timeHr != 1200){
                     timeHr += 1200;
