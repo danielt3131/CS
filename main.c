@@ -92,7 +92,7 @@ void getSMS(void *file, char **sms, int *smsInc, char *readBuffer, int *tmp, int
  *  7 = heapLimit set to 10 KiB
  *  8 = heapLimit set to 5 KiB 
  *  9 = heapLimit set to 1 KiB
- *  10 = least memory used but highest run time -> heapLimit will be set to absoulute mininum
+ *  10 = least memory used but highest run time -> heapLimit will be set to absolute minimum
  */
 
 int main(int argc, char **argv){
