@@ -28,18 +28,10 @@ void removeLF(int *collumSize, char **string){
     }
 }
 
-// 1 = char 0 = int
-void memoryAllocateCheck(void *array, int datatype){
-    if(datatype == 1){
-        if (array == NULL){
-            fprintf(stderr, "Unable to allocate memory now terminating\n");
-            exit(0);
-        }
-    } else if(datatype == 0){
-         if (array == NULL){
-            fprintf(stderr, "Unable to allocate memory now terminating\n");
-            exit(0);
-        }
+void memoryAllocateCheck(void *array){
+    if(array == NULL){
+        fprintf(stderr, "Unable to allocate memory now terminating");
+        exit(0);
     }
 }
 void fillStringTerminator(char *string, int *startPosition, int *endPosition){
@@ -62,12 +54,12 @@ void getSMS(void *file, char **sms, int *smsInc, char *readBuffer, int *tmp, int
         }
         fseek(file, (*fileInitPosition), SEEK_SET);
         sms[(*smsInc)] = (char *) calloc(((*filePosition) - (*fileInitPosition)), sizeof(char));
-        memoryAllocateCheck(sms[(*smsInc)], 1);
+        memoryAllocateCheck(sms[(*smsInc)]);
     } else {
         *filePosition = startHeapSizeSMS;  // Inital Size of SMS block
         *fileInitPosition = 0;  // Used for keeping track of the SMS length from the read buffer
         sms[(*smsInc)] = (char *) calloc ((*filePosition), (sizeof(char)));
-        memoryAllocateCheck(sms[(*smsInc)], 1);
+        memoryAllocateCheck(sms[(*smsInc)]);
     }
     fscanf(file, "%d", tmp);
     strcpy(readBuffer, "");
@@ -80,6 +72,7 @@ void getSMS(void *file, char **sms, int *smsInc, char *readBuffer, int *tmp, int
                 *filePosition = (*fileInitPosition) + startHeapSizeSMS;
                  // Changing the heap size of SMS
                 sms[(*smsInc)] = (char *) realloc(sms[(*smsInc)], (*filePosition));
+                memoryAllocateCheck(sms[(*smsInc)]);
                 // Need to set new elements to the null byte -> ('\0' decimal value 0) to prevent garbage data.
                 fillStringTerminator(sms[(*smsInc)], fileInitPosition, filePosition);  
 
@@ -182,19 +175,19 @@ int main(int argc, char **argv){
         }
     }
     char *readBuffer = (char *) malloc(30 * sizeof(char));
-    memoryAllocateCheck(readBuffer, 1);
+    memoryAllocateCheck(readBuffer);
     int heapSize = 30;
     int dictSize;
     fgets(readBuffer, 30, fp);
     dictSize = atoi(readBuffer);
     char **dictionary = (char **) malloc (dictSize * sizeof(char*));
     heapSize += (dictSize * sizeof(char *));
-    memoryAllocateCheck(dictionary,1);
+    memoryAllocateCheck(dictionary);
     for (int i = 0; i < dictSize; i++){
         fgets(readBuffer, 30, fp);
         dictionary[i] = (char *) malloc ((strlen(readBuffer) + 1) * sizeof(char));
-        memoryAllocateCheck(dictionary[i], 1);
-        heapSize += strlen(readBuffer) +1;
+        memoryAllocateCheck(dictionary[i]);
+        heapSize += strlen(readBuffer) + 1;
         strcpy(dictionary[i], readBuffer);
     }
     int probWordSize;
@@ -202,12 +195,12 @@ int main(int argc, char **argv){
     probWordSize = atoi(readBuffer);
     char **probWords = (char **) malloc (probWordSize * sizeof(char*));
     heapSize += probWordSize * sizeof(char *);
-    memoryAllocateCheck(probWords, 1);
+    memoryAllocateCheck(probWords);
     for (int i = 0; i < probWordSize; i++){
         fgets(readBuffer, 30, fp);
         probWords[i] = (char *) malloc ((strlen(readBuffer) + 1) * sizeof(char));
         heapSize += strlen(readBuffer) + 1;
-        memoryAllocateCheck(probWords[i], 1);
+        memoryAllocateCheck(probWords[i]);
         strcpy(probWords[i], readBuffer);
     }
 
@@ -268,21 +261,15 @@ int main(int argc, char **argv){
     }
     //printf("%d\n", numOfLoops);
     char **sms = (char **) malloc (numOfSMS * sizeof(char*));
-    memoryAllocateCheck(sms,1);
-    /* for (int i = 0; i < numOfSMS; i++){
-        sms[i] = (char *) malloc (startHeapSizeSMS * sizeof(char));
-        memoryAllocateCheck(sms[i], 1);
-    }  */
+    memoryAllocateCheck(sms);
     short timeHr = 0;
     short timeMin = 0;
     int smsInc = 0;
     int timeInc = 0;
     short *time = (short *) malloc ((numOfSMS) * sizeof(short));
-    memoryAllocateCheck(time, 0);
+    memoryAllocateCheck(time);
     char *timeFormat = (char *) malloc(4 * sizeof(char));
-    memoryAllocateCheck(timeFormat, 1);
-    //unsigned short *smsHeapSize = (unsigned short *) malloc(numOfSMS * sizeof(short));
-    //memoryAllocateCheck(smsHeapSize, 0);
+    memoryAllocateCheck(timeFormat);
     short numMispelled = 0;
     short consecTest = 1;
     int misplelledTotal = 0;
@@ -334,7 +321,7 @@ int main(int argc, char **argv){
         }
         for (int i = 0; i < numOfSMS; i++){
             smsLower[i] = (char *) malloc ((strlen(sms[i]) + 1) * sizeof(char));
-            memoryAllocateCheck(smsLower[i], 1);
+            memoryAllocateCheck(smsLower[i]);
             strcpy(smsLower[i], sms[i]);
         }
         removeLF(&numOfSMS, smsLower);
