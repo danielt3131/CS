@@ -1,0 +1,1885 @@
+desc: --stacks=yes --detailed-freq=1 --depth=20
+cmd: ./main 10 0
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=detailed
+n0: 0 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+#-----------
+snapshot=1
+#-----------
+time=188420
+mem_heap_B=5908
+mem_heap_extra_B=412
+mem_stacks_B=3008
+heap_tree=peak
+n3: 5908 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 316 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=2
+#-----------
+time=3135816
+mem_heap_B=5878
+mem_heap_extra_B=402
+mem_stacks_B=2616
+heap_tree=detailed
+n3: 5878 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 286 in 12 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=3
+#-----------
+time=6013349
+mem_heap_B=5995
+mem_heap_extra_B=445
+mem_stacks_B=640
+heap_tree=detailed
+n5: 5995 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 241 in 10 places, all below massif's threshold (1.00%)
+ n0: 82 0x109DD7: main (in /home/daniel/Programming/assign7/main)
+ n0: 80 0x109D50: main (in /home/daniel/Programming/assign7/main)
+#-----------
+snapshot=4
+#-----------
+time=9053594
+mem_heap_B=5908
+mem_heap_extra_B=412
+mem_stacks_B=2728
+heap_tree=detailed
+n3: 5908 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 316 in 12 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=5
+#-----------
+time=14016148
+mem_heap_B=5924
+mem_heap_extra_B=420
+mem_stacks_B=640
+heap_tree=detailed
+n5: 5924 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 170 in 10 places, all below massif's threshold (1.00%)
+ n0: 82 0x109DD7: main (in /home/daniel/Programming/assign7/main)
+ n0: 80 0x109D50: main (in /home/daniel/Programming/assign7/main)
+#-----------
+snapshot=6
+#-----------
+time=17179458
+mem_heap_B=5926
+mem_heap_extra_B=434
+mem_stacks_B=648
+heap_tree=detailed
+n5: 5926 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 172 in 10 places, all below massif's threshold (1.00%)
+ n0: 82 0x109DD7: main (in /home/daniel/Programming/assign7/main)
+ n0: 80 0x109D50: main (in /home/daniel/Programming/assign7/main)
+#-----------
+snapshot=7
+#-----------
+time=20973036
+mem_heap_B=5908
+mem_heap_extra_B=412
+mem_stacks_B=2728
+heap_tree=detailed
+n3: 5908 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 316 in 12 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=8
+#-----------
+time=24757376
+mem_heap_B=5878
+mem_heap_extra_B=402
+mem_stacks_B=2896
+heap_tree=detailed
+n3: 5878 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 286 in 12 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=9
+#-----------
+time=27358927
+mem_heap_B=5995
+mem_heap_extra_B=445
+mem_stacks_B=584
+heap_tree=detailed
+n5: 5995 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 241 in 10 places, all below massif's threshold (1.00%)
+ n0: 82 0x109DD7: main (in /home/daniel/Programming/assign7/main)
+ n0: 80 0x109D50: main (in /home/daniel/Programming/assign7/main)
+#-----------
+snapshot=10
+#-----------
+time=30906841
+mem_heap_B=5946
+mem_heap_extra_B=422
+mem_stacks_B=688
+heap_tree=detailed
+n5: 5946 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 192 in 10 places, all below massif's threshold (1.00%)
+ n0: 82 0x109DD7: main (in /home/daniel/Programming/assign7/main)
+ n0: 80 0x109D50: main (in /home/daniel/Programming/assign7/main)
+#-----------
+snapshot=11
+#-----------
+time=33666914
+mem_heap_B=5878
+mem_heap_extra_B=402
+mem_stacks_B=2896
+heap_tree=detailed
+n3: 5878 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 286 in 12 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=12
+#-----------
+time=38004262
+mem_heap_B=5908
+mem_heap_extra_B=412
+mem_stacks_B=912
+heap_tree=detailed
+n5: 5908 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 154 in 10 places, all below massif's threshold (1.00%)
+ n0: 82 0x109DD7: main (in /home/daniel/Programming/assign7/main)
+ n0: 80 0x109D50: main (in /home/daniel/Programming/assign7/main)
+#-----------
+snapshot=13
+#-----------
+time=39976013
+mem_heap_B=5908
+mem_heap_extra_B=412
+mem_stacks_B=2728
+heap_tree=detailed
+n3: 5908 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 316 in 12 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=14
+#-----------
+time=44707908
+mem_heap_B=5995
+mem_heap_extra_B=445
+mem_stacks_B=640
+heap_tree=detailed
+n5: 5995 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 241 in 10 places, all below massif's threshold (1.00%)
+ n0: 82 0x109DD7: main (in /home/daniel/Programming/assign7/main)
+ n0: 80 0x109D50: main (in /home/daniel/Programming/assign7/main)
+#-----------
+snapshot=15
+#-----------
+time=48256822
+mem_heap_B=5932
+mem_heap_extra_B=428
+mem_stacks_B=576
+heap_tree=detailed
+n5: 5932 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 178 in 10 places, all below massif's threshold (1.00%)
+ n0: 82 0x109DD7: main (in /home/daniel/Programming/assign7/main)
+ n0: 80 0x109D50: main (in /home/daniel/Programming/assign7/main)
+#-----------
+snapshot=16
+#-----------
+time=52987520
+mem_heap_B=5930
+mem_heap_extra_B=430
+mem_stacks_B=640
+heap_tree=detailed
+n5: 5930 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 176 in 10 places, all below massif's threshold (1.00%)
+ n0: 82 0x109DD7: main (in /home/daniel/Programming/assign7/main)
+ n0: 80 0x109D50: main (in /home/daniel/Programming/assign7/main)
+#-----------
+snapshot=17
+#-----------
+time=56535044
+mem_heap_B=5932
+mem_heap_extra_B=428
+mem_stacks_B=2280
+heap_tree=detailed
+n3: 5932 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 340 in 12 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=18
+#-----------
+time=60792288
+mem_heap_B=5930
+mem_heap_extra_B=430
+mem_stacks_B=640
+heap_tree=detailed
+n5: 5930 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 176 in 10 places, all below massif's threshold (1.00%)
+ n0: 82 0x109DD7: main (in /home/daniel/Programming/assign7/main)
+ n0: 80 0x109D50: main (in /home/daniel/Programming/assign7/main)
+#-----------
+snapshot=19
+#-----------
+time=64339824
+mem_heap_B=5932
+mem_heap_extra_B=428
+mem_stacks_B=640
+heap_tree=detailed
+n5: 5932 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 178 in 10 places, all below massif's threshold (1.00%)
+ n0: 82 0x109DD7: main (in /home/daniel/Programming/assign7/main)
+ n0: 80 0x109D50: main (in /home/daniel/Programming/assign7/main)
+#-----------
+snapshot=20
+#-----------
+time=68597132
+mem_heap_B=5878
+mem_heap_extra_B=402
+mem_stacks_B=2896
+heap_tree=detailed
+n3: 5878 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 286 in 12 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=21
+#-----------
+time=71435217
+mem_heap_B=5938
+mem_heap_extra_B=422
+mem_stacks_B=640
+heap_tree=detailed
+n5: 5938 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 184 in 10 places, all below massif's threshold (1.00%)
+ n0: 82 0x109DD7: main (in /home/daniel/Programming/assign7/main)
+ n0: 80 0x109D50: main (in /home/daniel/Programming/assign7/main)
+#-----------
+snapshot=22
+#-----------
+time=76401801
+mem_heap_B=5908
+mem_heap_extra_B=412
+mem_stacks_B=2728
+heap_tree=detailed
+n3: 5908 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 316 in 12 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=23
+#-----------
+time=79239894
+mem_heap_B=5878
+mem_heap_extra_B=402
+mem_stacks_B=2616
+heap_tree=detailed
+n3: 5878 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 286 in 12 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=24
+#-----------
+time=84206478
+mem_heap_B=5908
+mem_heap_extra_B=412
+mem_stacks_B=696
+heap_tree=detailed
+n5: 5908 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 154 in 10 places, all below massif's threshold (1.00%)
+ n0: 82 0x109DD7: main (in /home/daniel/Programming/assign7/main)
+ n0: 80 0x109D50: main (in /home/daniel/Programming/assign7/main)
+#-----------
+snapshot=25
+#-----------
+time=87045005
+mem_heap_B=5908
+mem_heap_extra_B=412
+mem_stacks_B=2728
+heap_tree=detailed
+n3: 5908 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 316 in 12 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=26
+#-----------
+time=90593128
+mem_heap_B=5908
+mem_heap_extra_B=412
+mem_stacks_B=2728
+heap_tree=detailed
+n3: 5908 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 316 in 12 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=27
+#-----------
+time=96270315
+mem_heap_B=5995
+mem_heap_extra_B=445
+mem_stacks_B=640
+heap_tree=detailed
+n5: 5995 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 241 in 10 places, all below massif's threshold (1.00%)
+ n0: 82 0x109DD7: main (in /home/daniel/Programming/assign7/main)
+ n0: 80 0x109D50: main (in /home/daniel/Programming/assign7/main)
+#-----------
+snapshot=28
+#-----------
+time=101237765
+mem_heap_B=5908
+mem_heap_extra_B=412
+mem_stacks_B=688
+heap_tree=detailed
+n5: 5908 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 154 in 10 places, all below massif's threshold (1.00%)
+ n0: 82 0x109DD7: main (in /home/daniel/Programming/assign7/main)
+ n0: 80 0x109D50: main (in /home/daniel/Programming/assign7/main)
+#-----------
+snapshot=29
+#-----------
+time=104076464
+mem_heap_B=5995
+mem_heap_extra_B=445
+mem_stacks_B=640
+heap_tree=detailed
+n5: 5995 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 241 in 10 places, all below massif's threshold (1.00%)
+ n0: 82 0x109DD7: main (in /home/daniel/Programming/assign7/main)
+ n0: 80 0x109D50: main (in /home/daniel/Programming/assign7/main)
+#-----------
+snapshot=30
+#-----------
+time=106914969
+mem_heap_B=5995
+mem_heap_extra_B=445
+mem_stacks_B=624
+heap_tree=detailed
+n5: 5995 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 241 in 10 places, all below massif's threshold (1.00%)
+ n0: 82 0x109DD7: main (in /home/daniel/Programming/assign7/main)
+ n0: 80 0x109D50: main (in /home/daniel/Programming/assign7/main)
+#-----------
+snapshot=31
+#-----------
+time=110463259
+mem_heap_B=5908
+mem_heap_extra_B=412
+mem_stacks_B=2728
+heap_tree=detailed
+n3: 5908 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 316 in 12 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=32
+#-----------
+time=115430772
+mem_heap_B=5878
+mem_heap_extra_B=402
+mem_stacks_B=2616
+heap_tree=detailed
+n3: 5878 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 286 in 12 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=33
+#-----------
+time=120398438
+mem_heap_B=5908
+mem_heap_extra_B=412
+mem_stacks_B=2728
+heap_tree=detailed
+n3: 5908 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 316 in 12 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=34
+#-----------
+time=124655643
+mem_heap_B=5926
+mem_heap_extra_B=434
+mem_stacks_B=2344
+heap_tree=detailed
+n3: 5926 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 334 in 12 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=35
+#-----------
+time=130332081
+mem_heap_B=5908
+mem_heap_extra_B=412
+mem_stacks_B=2728
+heap_tree=detailed
+n3: 5908 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 316 in 12 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=36
+#-----------
+time=136008368
+mem_heap_B=5926
+mem_heap_extra_B=434
+mem_stacks_B=640
+heap_tree=detailed
+n5: 5926 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 172 in 10 places, all below massif's threshold (1.00%)
+ n0: 82 0x109DD7: main (in /home/daniel/Programming/assign7/main)
+ n0: 80 0x109D50: main (in /home/daniel/Programming/assign7/main)
+#-----------
+snapshot=37
+#-----------
+time=140265700
+mem_heap_B=5878
+mem_heap_extra_B=402
+mem_stacks_B=2616
+heap_tree=detailed
+n3: 5878 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 286 in 12 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=38
+#-----------
+time=145942067
+mem_heap_B=5908
+mem_heap_extra_B=412
+mem_stacks_B=2728
+heap_tree=detailed
+n3: 5908 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 316 in 12 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=39
+#-----------
+time=150199264
+mem_heap_B=5925
+mem_heap_extra_B=435
+mem_stacks_B=640
+heap_tree=detailed
+n5: 5925 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 171 in 10 places, all below massif's threshold (1.00%)
+ n0: 82 0x109DD7: main (in /home/daniel/Programming/assign7/main)
+ n0: 80 0x109D50: main (in /home/daniel/Programming/assign7/main)
+#-----------
+snapshot=40
+#-----------
+time=153037385
+mem_heap_B=5925
+mem_heap_extra_B=435
+mem_stacks_B=576
+heap_tree=detailed
+n5: 5925 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 171 in 10 places, all below massif's threshold (1.00%)
+ n0: 82 0x109DD7: main (in /home/daniel/Programming/assign7/main)
+ n0: 80 0x109D50: main (in /home/daniel/Programming/assign7/main)
+#-----------
+snapshot=41
+#-----------
+time=158713614
+mem_heap_B=5925
+mem_heap_extra_B=435
+mem_stacks_B=2280
+heap_tree=detailed
+n3: 5925 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 333 in 12 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=42
+#-----------
+time=162970809
+mem_heap_B=5878
+mem_heap_extra_B=402
+mem_stacks_B=2616
+heap_tree=detailed
+n3: 5878 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 286 in 12 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=43
+#-----------
+time=167228181
+mem_heap_B=5908
+mem_heap_extra_B=412
+mem_stacks_B=2728
+heap_tree=detailed
+n3: 5908 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 316 in 12 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=44
+#-----------
+time=171485377
+mem_heap_B=5925
+mem_heap_extra_B=435
+mem_stacks_B=640
+heap_tree=detailed
+n5: 5925 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 171 in 10 places, all below massif's threshold (1.00%)
+ n0: 82 0x109DD7: main (in /home/daniel/Programming/assign7/main)
+ n0: 80 0x109D50: main (in /home/daniel/Programming/assign7/main)
+#-----------
+snapshot=45
+#-----------
+time=174323503
+mem_heap_B=5925
+mem_heap_extra_B=435
+mem_stacks_B=584
+heap_tree=detailed
+n5: 5925 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 171 in 10 places, all below massif's threshold (1.00%)
+ n0: 82 0x109DD7: main (in /home/daniel/Programming/assign7/main)
+ n0: 80 0x109D50: main (in /home/daniel/Programming/assign7/main)
+#-----------
+snapshot=46
+#-----------
+time=178580792
+mem_heap_B=5878
+mem_heap_extra_B=402
+mem_stacks_B=2896
+heap_tree=detailed
+n3: 5878 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 286 in 12 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=47
+#-----------
+time=181418999
+mem_heap_B=5908
+mem_heap_extra_B=412
+mem_stacks_B=3008
+heap_tree=detailed
+n3: 5908 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 316 in 12 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=48
+#-----------
+time=185676274
+mem_heap_B=5908
+mem_heap_extra_B=412
+mem_stacks_B=576
+heap_tree=detailed
+n5: 5908 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 154 in 10 places, all below massif's threshold (1.00%)
+ n0: 82 0x109DD7: main (in /home/daniel/Programming/assign7/main)
+ n0: 80 0x109D50: main (in /home/daniel/Programming/assign7/main)
+#-----------
+snapshot=49
+#-----------
+time=191352532
+mem_heap_B=5924
+mem_heap_extra_B=420
+mem_stacks_B=592
+heap_tree=detailed
+n5: 5924 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 170 in 10 places, all below massif's threshold (1.00%)
+ n0: 82 0x109DD7: main (in /home/daniel/Programming/assign7/main)
+ n0: 80 0x109D50: main (in /home/daniel/Programming/assign7/main)
+#-----------
+snapshot=50
+#-----------
+time=193324284
+mem_heap_B=5938
+mem_heap_extra_B=422
+mem_stacks_B=584
+heap_tree=detailed
+n5: 5938 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 184 in 10 places, all below massif's threshold (1.00%)
+ n0: 82 0x109DD7: main (in /home/daniel/Programming/assign7/main)
+ n0: 80 0x109D50: main (in /home/daniel/Programming/assign7/main)
+#-----------
+snapshot=51
+#-----------
+time=195296036
+mem_heap_B=5995
+mem_heap_extra_B=445
+mem_stacks_B=2208
+heap_tree=detailed
+n3: 5995 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 403 in 12 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=52
+#-----------
+time=197267800
+mem_heap_B=5925
+mem_heap_extra_B=435
+mem_stacks_B=576
+heap_tree=detailed
+n5: 5925 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 171 in 10 places, all below massif's threshold (1.00%)
+ n0: 82 0x109DD7: main (in /home/daniel/Programming/assign7/main)
+ n0: 80 0x109D50: main (in /home/daniel/Programming/assign7/main)
+#-----------
+snapshot=53
+#-----------
+time=199239598
+mem_heap_B=5926
+mem_heap_extra_B=434
+mem_stacks_B=2192
+heap_tree=detailed
+n3: 5926 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 334 in 12 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=54
+#-----------
+time=201211349
+mem_heap_B=5930
+mem_heap_extra_B=430
+mem_stacks_B=648
+heap_tree=detailed
+n5: 5930 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 176 in 10 places, all below massif's threshold (1.00%)
+ n0: 82 0x109DD7: main (in /home/daniel/Programming/assign7/main)
+ n0: 80 0x109D50: main (in /home/daniel/Programming/assign7/main)
+#-----------
+snapshot=55
+#-----------
+time=203183107
+mem_heap_B=5995
+mem_heap_extra_B=445
+mem_stacks_B=640
+heap_tree=detailed
+n5: 5995 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 241 in 10 places, all below massif's threshold (1.00%)
+ n0: 82 0x109DD7: main (in /home/daniel/Programming/assign7/main)
+ n0: 80 0x109D50: main (in /home/daniel/Programming/assign7/main)
+#-----------
+snapshot=56
+#-----------
+time=205154907
+mem_heap_B=5908
+mem_heap_extra_B=412
+mem_stacks_B=3008
+heap_tree=detailed
+n3: 5908 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 316 in 12 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=57
+#-----------
+time=207126659
+mem_heap_B=5932
+mem_heap_extra_B=428
+mem_stacks_B=576
+heap_tree=detailed
+n5: 5932 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 178 in 10 places, all below massif's threshold (1.00%)
+ n0: 82 0x109DD7: main (in /home/daniel/Programming/assign7/main)
+ n0: 80 0x109D50: main (in /home/daniel/Programming/assign7/main)
+#-----------
+snapshot=58
+#-----------
+time=209098461
+mem_heap_B=5908
+mem_heap_extra_B=412
+mem_stacks_B=2728
+heap_tree=detailed
+n3: 5908 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 316 in 12 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=59
+#-----------
+time=211070388
+mem_heap_B=5908
+mem_heap_extra_B=412
+mem_stacks_B=2728
+heap_tree=detailed
+n3: 5908 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 316 in 12 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=60
+#-----------
+time=213042181
+mem_heap_B=5908
+mem_heap_extra_B=412
+mem_stacks_B=2728
+heap_tree=detailed
+n3: 5908 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 316 in 12 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=61
+#-----------
+time=215013978
+mem_heap_B=5908
+mem_heap_extra_B=412
+mem_stacks_B=2728
+heap_tree=detailed
+n3: 5908 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 316 in 12 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=62
+#-----------
+time=216985841
+mem_heap_B=5908
+mem_heap_extra_B=412
+mem_stacks_B=2728
+heap_tree=detailed
+n3: 5908 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 316 in 12 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=63
+#-----------
+time=218957595
+mem_heap_B=5930
+mem_heap_extra_B=430
+mem_stacks_B=584
+heap_tree=detailed
+n5: 5930 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 176 in 10 places, all below massif's threshold (1.00%)
+ n0: 82 0x109DD7: main (in /home/daniel/Programming/assign7/main)
+ n0: 80 0x109D50: main (in /home/daniel/Programming/assign7/main)
+#-----------
+snapshot=64
+#-----------
+time=220929351
+mem_heap_B=5995
+mem_heap_extra_B=445
+mem_stacks_B=584
+heap_tree=detailed
+n5: 5995 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 241 in 10 places, all below massif's threshold (1.00%)
+ n0: 82 0x109DD7: main (in /home/daniel/Programming/assign7/main)
+ n0: 80 0x109D50: main (in /home/daniel/Programming/assign7/main)
+#-----------
+snapshot=65
+#-----------
+time=222901209
+mem_heap_B=5908
+mem_heap_extra_B=412
+mem_stacks_B=2728
+heap_tree=detailed
+n3: 5908 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 316 in 12 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=66
+#-----------
+time=224872973
+mem_heap_B=5926
+mem_heap_extra_B=434
+mem_stacks_B=640
+heap_tree=detailed
+n5: 5926 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 172 in 10 places, all below massif's threshold (1.00%)
+ n0: 82 0x109DD7: main (in /home/daniel/Programming/assign7/main)
+ n0: 80 0x109D50: main (in /home/daniel/Programming/assign7/main)
+#-----------
+snapshot=67
+#-----------
+time=226844724
+mem_heap_B=5878
+mem_heap_extra_B=402
+mem_stacks_B=2624
+heap_tree=detailed
+n3: 5878 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n1: 1024 0x48E5F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x48E46D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x48E46D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x48CECA8: outstring_func (vfprintf-internal.c:239)
+       n1: 1024 0x48CECA8: __vfprintf_internal (vfprintf-internal.c:1516)
+        n1: 1024 0x48B979E: printf (printf.c:33)
+         n0: 1024 0x10A044: main (in /home/daniel/Programming/assign7/main)
+ n1: 472 0x48D864D: __fopen_internal (iofopen.c:65)
+  n1: 472 0x48D864D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+   n0: 472 0x109987: main (in /home/daniel/Programming/assign7/main)
+ n0: 286 in 12 places, all below massif's threshold (1.00%)

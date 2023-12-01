@@ -42,7 +42,12 @@ void memoryAllocateCheck(void *array, int datatype){
         }
     }
 }
-const int startHeapSizeSMS = 29;
+void fillStringTerminator(char *string, int *startPosition, int *endPosition){
+    for (int i = (*startPosition); i < (*endPosition); i++){
+        string[i] = '\0';
+    }
+}
+const int startHeapSizeSMS = 30;
 void getSMS(void *file, char **sms, int *smsInc, char *readBuffer, int *tmp, int *filePosition, int *fileInitPosition, bool *doFile){
     if ((*doFile) == true){
         *fileInitPosition = ftell(file);
@@ -59,8 +64,8 @@ void getSMS(void *file, char **sms, int *smsInc, char *readBuffer, int *tmp, int
         sms[(*smsInc)] = (char *) calloc(((*filePosition) - (*fileInitPosition)), sizeof(char));
         memoryAllocateCheck(sms[(*smsInc)], 1);
     } else {
-        *filePosition = 30;
-        *fileInitPosition = 0;
+        *filePosition = startHeapSizeSMS;  // Inital Size of SMS block
+        *fileInitPosition = 0;  // Used for keeping track of the SMS length from the read buffer
         sms[(*smsInc)] = (char *) calloc ((*filePosition), (sizeof(char)));
         memoryAllocateCheck(sms[(*smsInc)], 1);
     }
@@ -72,9 +77,12 @@ void getSMS(void *file, char **sms, int *smsInc, char *readBuffer, int *tmp, int
         if ((*doFile) == false){
             (*fileInitPosition) = strlen(readBuffer) + (*fileInitPosition);
             if((*fileInitPosition) >= (*filePosition)){
-                *filePosition = (*fileInitPosition) + 29;
+                *filePosition = (*fileInitPosition) + startHeapSizeSMS;
                  // Changing the heap size of SMS
                 sms[(*smsInc)] = (char *) realloc(sms[(*smsInc)], (*filePosition));
+                // Need to set new elements to the null byte -> ('\0' decimal value 0) to prevent garbage data.
+                fillStringTerminator(sms[(*smsInc)], fileInitPosition, filePosition);  
+
             }
         }
         strcat(sms[(*smsInc)], readBuffer);
