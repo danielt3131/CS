@@ -100,6 +100,22 @@ int main(int argc, char **argv){
     int heapLimit = 1024;
     bool additionalMemoryOptimizations = false;
     if (argc > 1){
+        if (strcmp(argv[1], "-h") == 0){
+            printf("First argument:\n");
+            printf("1 = fastest time but higest memory consumption -> heapLimit will be set to 1GiB\n");
+            printf("2 = heapLimit set to 500 KiB\n");
+            printf("3 = heapLimit set to 200 KiB\n");
+            printf("4 = heapLimit set to 100 KiB\n");
+            printf("5 = heapLimit set to 50 KiB\n");
+            printf("6 = heapLimit set to 20 KiB\n");
+            printf("7 = heapLimit set to 10 KiB\n");
+            printf("8 = heapLimit set to 5 KiB\n"); 
+            printf("9 = heapLimit set to 1 KiB (default choice)\n");
+            printf("10 = heapLimit set to the absoulte minimum (slowest time)\n");
+            printf("Second argument:\n");
+            printf("1 = increased memory savings (Will be slower from higher file IO operations)\n");
+            exit(0);
+        }
         if (strcmp(argv[1], "1") == 0){
             heapLimit = (1024 * 1024 * 1024);
         } else if (strcmp(argv[1], "2") == 0){
@@ -225,7 +241,7 @@ int main(int argc, char **argv){
         free(probWords);
         fprintf(stderr, "At / over the maximum permitted heap size.\n");
         fprintf(stderr, "Now terminating the process\n");
-        fprintf(stderr, "To permit more memory, add the amount of memory to be permitted as a cli argument\n");
+        fprintf(stderr, "To permit more memory, add the amount of memory to be permitted via changing the first cli argument, for more info pass -h as the first command line argument\n");
         fprintf(stderr, "The absolute minimum amount of memory needed is %ld\n", heapSize + 2 * (indivSMSSize + 2 * sizeof(char*) + sizeof(short)) + 3);
         exit(0);
     }
