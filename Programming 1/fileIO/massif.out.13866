@@ -1,0 +1,1246 @@
+desc: --stacks=yes --detailed-freq=1 --depth=20
+cmd: ./main 1 1
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=detailed
+n0: 0 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+#-----------
+snapshot=1
+#-----------
+time=5256797
+mem_heap_B=343080
+mem_heap_extra_B=7312
+mem_stacks_B=2728
+heap_tree=detailed
+n6: 343080 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n1: 8900 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 8900 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n0: 740 in 7 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=2
+#-----------
+time=9906107
+mem_heap_B=351249
+mem_heap_extra_B=13695
+mem_stacks_B=584
+heap_tree=detailed
+n6: 351249 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n1: 17069 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 17069 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n0: 740 in 7 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=3
+#-----------
+time=16657808
+mem_heap_B=363096
+mem_heap_extra_B=22936
+mem_stacks_B=2728
+heap_tree=detailed
+n6: 363096 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n1: 28916 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 28916 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n0: 740 in 7 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=4
+#-----------
+time=25144220
+mem_heap_B=377999
+mem_heap_extra_B=34545
+mem_stacks_B=3008
+heap_tree=detailed
+n6: 377999 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n1: 43819 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 43819 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n1: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n0: 5120 in 2 places, all below massif's threshold (1.00%)
+ n0: 740 in 7 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=5
+#-----------
+time=30865005
+mem_heap_B=388051
+mem_heap_extra_B=42413
+mem_stacks_B=2616
+heap_tree=detailed
+n6: 388051 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n1: 53871 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 53871 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n1: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n0: 5120 in 2 places, all below massif's threshold (1.00%)
+ n0: 740 in 7 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=6
+#-----------
+time=34454824
+mem_heap_B=394363
+mem_heap_extra_B=47325
+mem_stacks_B=2616
+heap_tree=detailed
+n6: 394363 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n1: 60183 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 60183 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n1: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n0: 5120 in 2 places, all below massif's threshold (1.00%)
+ n0: 740 in 7 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=7
+#-----------
+time=40303668
+mem_heap_B=404625
+mem_heap_extra_B=55319
+mem_stacks_B=2728
+heap_tree=detailed
+n6: 404625 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n1: 70445 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 70445 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n1: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n0: 5120 in 2 places, all below massif's threshold (1.00%)
+ n0: 740 in 7 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=8
+#-----------
+time=46712309
+mem_heap_B=415883
+mem_heap_extra_B=64125
+mem_stacks_B=2728
+heap_tree=detailed
+n6: 415883 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n1: 81703 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 81703 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n1: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n0: 5120 in 2 places, all below massif's threshold (1.00%)
+ n0: 740 in 7 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=9
+#-----------
+time=50997057
+mem_heap_B=423407
+mem_heap_extra_B=69961
+mem_stacks_B=3008
+heap_tree=detailed
+n6: 423407 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n1: 89227 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 89227 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n1: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n0: 5120 in 2 places, all below massif's threshold (1.00%)
+ n0: 740 in 7 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=10
+#-----------
+time=57684429
+mem_heap_B=435168
+mem_heap_extra_B=79128
+mem_stacks_B=2776
+heap_tree=detailed
+n5: 435168 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n1: 100988 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 100988 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=11
+#-----------
+time=65016981
+mem_heap_B=448018
+mem_heap_extra_B=89166
+mem_stacks_B=728
+heap_tree=detailed
+n5: 448018 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n1: 113838 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 113838 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=12
+#-----------
+time=68997695
+mem_heap_B=455027
+mem_heap_extra_B=94653
+mem_stacks_B=3008
+heap_tree=detailed
+n5: 455027 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n1: 120847 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 120847 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=13
+#-----------
+time=75621102
+mem_heap_B=466662
+mem_heap_extra_B=103706
+mem_stacks_B=968
+heap_tree=detailed
+n5: 466662 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n1: 132482 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 132482 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=14
+#-----------
+time=79939281
+mem_heap_B=474254
+mem_heap_extra_B=109618
+mem_stacks_B=3008
+heap_tree=detailed
+n5: 474254 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n1: 140074 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 140074 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=15
+#-----------
+time=86732454
+mem_heap_B=486160
+mem_heap_extra_B=118920
+mem_stacks_B=2728
+heap_tree=detailed
+n5: 486160 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 151980 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 151980 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=16
+#-----------
+time=94642972
+mem_heap_B=500064
+mem_heap_extra_B=129744
+mem_stacks_B=968
+heap_tree=detailed
+n5: 500064 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 165884 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 165884 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=17
+#-----------
+time=102842376
+mem_heap_B=514464
+mem_heap_extra_B=140992
+mem_stacks_B=968
+heap_tree=detailed
+n5: 514464 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 180284 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 180284 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=18
+#-----------
+time=107065151
+mem_heap_B=521888
+mem_heap_extra_B=146768
+mem_stacks_B=696
+heap_tree=detailed
+n5: 521888 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 187708 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 187708 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=19
+#-----------
+time=112490979
+mem_heap_B=531423
+mem_heap_extra_B=154201
+mem_stacks_B=3008
+heap_tree=detailed
+n5: 531423 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 197243 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 197243 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=20
+#-----------
+time=116880178
+mem_heap_B=539107
+mem_heap_extra_B=160181
+mem_stacks_B=2728
+heap_tree=detailed
+n5: 539107 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 204927 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 204927 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=21
+#-----------
+time=122579007
+mem_heap_B=549124
+mem_heap_extra_B=168004
+mem_stacks_B=2728
+heap_tree=detailed
+n5: 549124 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 214944 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 214944 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=22
+#-----------
+time=128449136
+mem_heap_B=559436
+mem_heap_extra_B=176052
+mem_stacks_B=3008
+heap_tree=detailed
+n5: 559436 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 225256 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 225256 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=23
+#-----------
+time=137191741
+mem_heap_B=574775
+mem_heap_extra_B=188017
+mem_stacks_B=3008
+heap_tree=detailed
+n5: 574775 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 240595 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 240595 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=24
+#-----------
+time=142097571
+mem_heap_B=583398
+mem_heap_extra_B=194714
+mem_stacks_B=696
+heap_tree=detailed
+n5: 583398 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 249218 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 249218 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=25
+#-----------
+time=147101581
+mem_heap_B=592198
+mem_heap_extra_B=201594
+mem_stacks_B=2728
+heap_tree=detailed
+n5: 592198 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 258018 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 258018 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=26
+#-----------
+time=152204715
+mem_heap_B=601150
+mem_heap_extra_B=208562
+mem_stacks_B=3008
+heap_tree=detailed
+n5: 601150 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 266970 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 266970 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=27
+#-----------
+time=157406920
+mem_heap_B=610289
+mem_heap_extra_B=215679
+mem_stacks_B=2728
+heap_tree=detailed
+n5: 610289 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 276109 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 276109 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=28
+#-----------
+time=162727748
+mem_heap_B=619625
+mem_heap_extra_B=222975
+mem_stacks_B=992
+heap_tree=detailed
+n5: 619625 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 285445 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 285445 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=29
+#-----------
+time=168137496
+mem_heap_B=629138
+mem_heap_extra_B=230390
+mem_stacks_B=3008
+heap_tree=detailed
+n5: 629138 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 294958 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 294958 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=30
+#-----------
+time=173666708
+mem_heap_B=638839
+mem_heap_extra_B=237977
+mem_stacks_B=3008
+heap_tree=detailed
+n5: 638839 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 304659 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 304659 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=31
+#-----------
+time=179296216
+mem_heap_B=648740
+mem_heap_extra_B=245676
+mem_stacks_B=2728
+heap_tree=detailed
+n5: 648740 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 314560 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 314560 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=32
+#-----------
+time=185053101
+mem_heap_B=658837
+mem_heap_extra_B=253579
+mem_stacks_B=2728
+heap_tree=detailed
+n5: 658837 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 324657 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 324657 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=33
+#-----------
+time=192321655
+mem_heap_B=671625
+mem_heap_extra_B=263519
+mem_stacks_B=3008
+heap_tree=detailed
+n5: 671625 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 337445 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 337445 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=34
+#-----------
+time=200690404
+mem_heap_B=686307
+mem_heap_extra_B=274973
+mem_stacks_B=696
+heap_tree=detailed
+n5: 686307 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 352127 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 352127 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=35
+#-----------
+time=206869484
+mem_heap_B=697172
+mem_heap_extra_B=283452
+mem_stacks_B=2728
+heap_tree=detailed
+n5: 697172 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 362992 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 362992 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=36
+#-----------
+time=213165188
+mem_heap_B=708207
+mem_heap_extra_B=292041
+mem_stacks_B=3008
+heap_tree=detailed
+n5: 708207 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 374027 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 374027 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=37
+#-----------
+time=219590827
+mem_heap_B=719496
+mem_heap_extra_B=300848
+mem_stacks_B=2728
+heap_tree=detailed
+n5: 719496 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 385316 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 385316 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=38
+#-----------
+time=226137141
+mem_heap_B=730992
+mem_heap_extra_B=309824
+mem_stacks_B=2728
+heap_tree=detailed
+n5: 730992 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 396812 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 396812 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=39
+#-----------
+time=232821913
+mem_heap_B=742743
+mem_heap_extra_B=318985
+mem_stacks_B=2728
+heap_tree=detailed
+n5: 742743 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 408563 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 408563 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=40
+#-----------
+time=239635523
+mem_heap_B=754696
+mem_heap_extra_B=328296
+mem_stacks_B=2728
+heap_tree=detailed
+n5: 754696 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 420516 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 420516 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=41
+#-----------
+time=245951192
+mem_heap_B=1183920
+mem_heap_extra_B=663016
+mem_stacks_B=672
+heap_tree=peak
+n6: 1183920 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 427200 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 427200 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 422540 0x10A6AB: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=42
+#-----------
+time=251793746
+mem_heap_B=1188580
+mem_heap_extra_B=666612
+mem_stacks_B=640
+heap_tree=detailed
+n6: 1188580 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 427200 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 427200 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 427200 0x10A6AB: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=43
+#-----------
+time=257636285
+mem_heap_B=1188580
+mem_heap_extra_B=666612
+mem_stacks_B=640
+heap_tree=detailed
+n6: 1188580 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 427200 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 427200 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 427200 0x10A6AB: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=44
+#-----------
+time=263478848
+mem_heap_B=1188580
+mem_heap_extra_B=666612
+mem_stacks_B=640
+heap_tree=detailed
+n6: 1188580 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 427200 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 427200 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 427200 0x10A6AB: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=45
+#-----------
+time=269321395
+mem_heap_B=1188580
+mem_heap_extra_B=666612
+mem_stacks_B=640
+heap_tree=detailed
+n6: 1188580 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 427200 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 427200 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 427200 0x10A6AB: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=46
+#-----------
+time=278085234
+mem_heap_B=1188580
+mem_heap_extra_B=666612
+mem_stacks_B=640
+heap_tree=detailed
+n6: 1188580 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 427200 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 427200 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 427200 0x10A6AB: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=47
+#-----------
+time=283927779
+mem_heap_B=1188580
+mem_heap_extra_B=666612
+mem_stacks_B=648
+heap_tree=detailed
+n6: 1188580 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 427200 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 427200 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 427200 0x10A6AB: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=48
+#-----------
+time=286849076
+mem_heap_B=1188580
+mem_heap_extra_B=666612
+mem_stacks_B=640
+heap_tree=detailed
+n6: 1188580 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 427200 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 427200 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 427200 0x10A6AB: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=49
+#-----------
+time=292691639
+mem_heap_B=1188580
+mem_heap_extra_B=666612
+mem_stacks_B=640
+heap_tree=detailed
+n6: 1188580 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 427200 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 427200 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 427200 0x10A6AB: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=50
+#-----------
+time=295612947
+mem_heap_B=1185474
+mem_heap_extra_B=664134
+mem_stacks_B=2200
+heap_tree=detailed
+n6: 1185474 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 425647 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 425647 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 425647 0x10A6AB: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=51
+#-----------
+time=298534251
+mem_heap_B=1152710
+mem_heap_extra_B=638610
+mem_stacks_B=584
+heap_tree=detailed
+n6: 1152710 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 409265 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 409265 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 409265 0x10A6AB: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=52
+#-----------
+time=301455548
+mem_heap_B=1120068
+mem_heap_extra_B=613156
+mem_stacks_B=2328
+heap_tree=detailed
+n6: 1120068 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 392944 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 392944 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 392944 0x10A6AB: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=53
+#-----------
+time=304376861
+mem_heap_B=1087474
+mem_heap_extra_B=587686
+mem_stacks_B=576
+heap_tree=detailed
+n6: 1087474 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 376647 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 376647 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 376647 0x10A6AB: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=54
+#-----------
+time=307298158
+mem_heap_B=1054908
+mem_heap_extra_B=562316
+mem_stacks_B=576
+heap_tree=detailed
+n6: 1054908 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 360364 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 360364 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 360364 0x10A6AB: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=55
+#-----------
+time=310219464
+mem_heap_B=1022204
+mem_heap_extra_B=536860
+mem_stacks_B=584
+heap_tree=detailed
+n6: 1022204 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 344012 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 344012 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 344012 0x10A6AB: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=56
+#-----------
+time=313140761
+mem_heap_B=989590
+mem_heap_extra_B=511354
+mem_stacks_B=656
+heap_tree=detailed
+n6: 989590 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 327713 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 327713 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 327697 0x10A6AB: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=57
+#-----------
+time=316062068
+mem_heap_B=957008
+mem_heap_extra_B=485976
+mem_stacks_B=584
+heap_tree=detailed
+n6: 957008 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 311414 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 311414 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 311414 0x10A6AB: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=58
+#-----------
+time=318983365
+mem_heap_B=924404
+mem_heap_extra_B=460580
+mem_stacks_B=624
+heap_tree=detailed
+n6: 924404 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 295112 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 295112 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 295112 0x10A6AB: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=59
+#-----------
+time=321904673
+mem_heap_B=891774
+mem_heap_extra_B=435114
+mem_stacks_B=624
+heap_tree=detailed
+n6: 891774 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 278797 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 278797 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 278797 0x10A6AB: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=60
+#-----------
+time=324825981
+mem_heap_B=859174
+mem_heap_extra_B=409698
+mem_stacks_B=576
+heap_tree=detailed
+n6: 859174 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 262497 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 262497 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 262497 0x10A6AB: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=61
+#-----------
+time=327747280
+mem_heap_B=826552
+mem_heap_extra_B=384272
+mem_stacks_B=584
+heap_tree=detailed
+n6: 826552 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 246186 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 246186 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 246186 0x10A6AB: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=62
+#-----------
+time=330668579
+mem_heap_B=793910
+mem_heap_extra_B=358818
+mem_stacks_B=584
+heap_tree=detailed
+n6: 793910 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 229865 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 229865 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 229865 0x10A6AB: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=63
+#-----------
+time=333589886
+mem_heap_B=761308
+mem_heap_extra_B=333404
+mem_stacks_B=576
+heap_tree=detailed
+n6: 761308 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 213564 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 213564 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 213564 0x10A6AB: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=64
+#-----------
+time=336511200
+mem_heap_B=728750
+mem_heap_extra_B=307978
+mem_stacks_B=576
+heap_tree=detailed
+n6: 728750 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 197285 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 197285 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 197285 0x10A6AB: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=65
+#-----------
+time=339432520
+mem_heap_B=696194
+mem_heap_extra_B=282614
+mem_stacks_B=576
+heap_tree=detailed
+n6: 696194 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 181007 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 181007 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 181007 0x10A6AB: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=66
+#-----------
+time=342353836
+mem_heap_B=663736
+mem_heap_extra_B=257296
+mem_stacks_B=576
+heap_tree=detailed
+n6: 663736 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 164778 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 164778 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 164778 0x10A6AB: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=67
+#-----------
+time=345275136
+mem_heap_B=631300
+mem_heap_extra_B=231988
+mem_stacks_B=2288
+heap_tree=detailed
+n6: 631300 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 148560 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 148560 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 148560 0x10A6AB: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=68
+#-----------
+time=348196457
+mem_heap_B=598810
+mem_heap_extra_B=206654
+mem_stacks_B=576
+heap_tree=detailed
+n6: 598810 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n1: 132315 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 132315 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 132315 0x10A6AB: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=69
+#-----------
+time=351117762
+mem_heap_B=566352
+mem_heap_extra_B=181336
+mem_stacks_B=576
+heap_tree=detailed
+n6: 566352 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n1: 116086 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 116086 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 116086 0x10A6AB: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=70
+#-----------
+time=354039062
+mem_heap_B=533894
+mem_heap_extra_B=156018
+mem_stacks_B=576
+heap_tree=detailed
+n6: 533894 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n1: 99857 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 99857 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 99857 0x10A6AB: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=71
+#-----------
+time=356960365
+mem_heap_B=501428
+mem_heap_extra_B=130756
+mem_stacks_B=2248
+heap_tree=detailed
+n6: 501428 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n1: 83624 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 83624 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 83624 0x10A6AB: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=72
+#-----------
+time=359881681
+mem_heap_B=468936
+mem_heap_extra_B=105392
+mem_stacks_B=624
+heap_tree=detailed
+n6: 468936 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n1: 67378 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 67378 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 67378 0x10A6AB: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=73
+#-----------
+time=362802991
+mem_heap_B=436478
+mem_heap_extra_B=80074
+mem_stacks_B=584
+heap_tree=detailed
+n6: 436478 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n1: 51149 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 51149 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 51149 0x10A6AB: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5860 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=74
+#-----------
+time=365724308
+mem_heap_B=404020
+mem_heap_extra_B=54756
+mem_stacks_B=2200
+heap_tree=detailed
+n7: 404020 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n1: 34920 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 34920 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 34920 0x10A6AB: main (in /home/daniel/Programming/assign7/main)
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n1: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n0: 5120 in 2 places, all below massif's threshold (1.00%)
+ n0: 740 in 7 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=75
+#-----------
+time=368645615
+mem_heap_B=371560
+mem_heap_extra_B=29520
+mem_stacks_B=584
+heap_tree=detailed
+n7: 371560 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n1: 18690 0x109761: getSMS (in /home/daniel/Programming/assign7/main)
+  n0: 18690 0x10A56A: main (in /home/daniel/Programming/assign7/main)
+ n0: 18690 0x10A6AB: main (in /home/daniel/Programming/assign7/main)
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n0: 740 in 7 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=76
+#-----------
+time=371567003
+mem_heap_B=339102
+mem_heap_extra_B=4202
+mem_stacks_B=2200
+heap_tree=detailed
+n5: 339102 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 145920 0x10A335: main (in /home/daniel/Programming/assign7/main)
+ n0: 145920 0x10A4AE: main (in /home/daniel/Programming/assign7/main)
+ n0: 36480 0x10A383: main (in /home/daniel/Programming/assign7/main)
+ n0: 5662 in 9 places, all below massif's threshold (1.00%)
+ n1: 5120 0x48D7BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 5120 0x48E6CDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x48E5CDB: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:485)
+    n1: 4096 0x48E6D95: _IO_default_uflow (genops.c:362)
+     n1: 4096 0x48D941B: _IO_getline_info (iogetline.c:60)
+      n1: 4096 0x48D840F: fgets (iofgets.c:53)
+       n0: 4096 0x109D2A: main (in /home/daniel/Programming/assign7/main)
+   n0: 1024 in 1 place, below massif's threshold (1.00%)
