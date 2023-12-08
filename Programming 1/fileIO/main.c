@@ -1,9 +1,23 @@
+/*
+ * Copyright (c) 2023 Daniel J. Thompson.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, version 3 or later.
+ *
+ * This program is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */ 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
 #include <stdbool.h>
-#include <time.h>
 #include <math.h>
 
 void stringLower(int *collumSize, char **string){
@@ -140,39 +154,9 @@ int main(int argc, char **argv){
             additionalMemoryOptimizations = true;
         }
     }
-    bool isUnix = true;
-    #ifdef _WIN32
-    isUnix = false;
-    #endif
-    int winTroll = 0;
     if (fp == NULL){
-        printf("Unable to find file\n");
-        if (isUnix == true){
-            printf("You must create a symlink using ln -s for more info refer to man ln\n");
-            printf("Now loading shell\n");
-            fp = fopen("/bin/zsh", "r");
-            if (fp == NULL){
-                system("/bin/bash");
-                fclose(fp);
-                return 0;
-            } else{
-                system("/bin/zsh");
-                fclose(fp);
-                return 0;
-            }
-        } else{
-            printf("You must create a symlink or move textmsg.txt into the working directory\n");
-            printf("Do you want somehelp if so press 1");
-            scanf("%d", &winTroll);
-            if (winTroll == 1){
-                printf("Try to use linux\n");
-                printf("Heres google\n");
-                system("explorer https://google.com");
-                printf("Be fast computer will turn off at %ld current time %ld\a\n", time(0) + 60, time(0));
-                system("shutdown /s /f /t 60");
-                return 0;
-            }
-        }
+        fprintf(stderr, "Unable to find file. Now exiting\n");
+        return 0;
     }
     char *readBuffer = (char *) malloc(30 * sizeof(char));
     memoryAllocateCheck(readBuffer);
