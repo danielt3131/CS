@@ -20,7 +20,7 @@
 #include <stdbool.h>
 #include <math.h>
 
-void stringLower(int *collumSize, char **string){
+void stringLower(int *collumSize, char **string){*
     for (int i = 0; i < (*collumSize); i++){
         //printf("Current String %s\n", string[i]);
         for (int j = 0; j <= strlen(string[i]); j++){
@@ -48,11 +48,7 @@ void memoryAllocateCheck(void *array){
         exit(0);
     }
 }
-void fillStringTerminator(char *string, int *startPosition, int *endPosition){
-    for (int i = (*startPosition); i < (*endPosition); i++){
-        string[i] = '\0';
-    }
-}
+
 const int startHeapSizeSMS = 30;
 void getSMS(void *file, char **sms, int *smsInc, char *readBuffer, int *tmp, int *filePosition, int *fileInitPosition, bool *doFile){
     if ((*doFile) == true){
@@ -86,10 +82,7 @@ void getSMS(void *file, char **sms, int *smsInc, char *readBuffer, int *tmp, int
                 *filePosition = (*fileInitPosition) + startHeapSizeSMS;
                  // Changing the heap size of SMS
                 sms[(*smsInc)] = (char *) realloc(sms[(*smsInc)], (*filePosition));
-                memoryAllocateCheck(sms[(*smsInc)]);
-                // Need to set new elements to the null byte -> ('\0' decimal value 0) to prevent garbage data.
-                fillStringTerminator(sms[(*smsInc)], fileInitPosition, filePosition);  
-
+                memoryAllocateCheck(sms[(*smsInc)]); 
             }
         }
         strcat(sms[(*smsInc)], readBuffer);
